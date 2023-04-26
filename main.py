@@ -482,7 +482,7 @@ def draw_graph(x,y, **kwargs):
         plt.scatter(x, y, marker='x', color='red')
     plt.savefig('base.jpg', format='jpg')
 
-    if (kwargs.get("chat_id", "")!="-1001757371836"):
+    if (kwargs.get("chat_id", "-1001757371836")!="-1001757371836"):
         #bot.send_photo(kwargs.get("chat_id", ""), photo=open('base.jpg', 'rb'))
         bot.send_document(kwargs.get("chat_id", "-1001757371836"), document=open('base.jpg', 'rb'))
         os.remove("base.jpg")
