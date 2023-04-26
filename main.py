@@ -41,26 +41,26 @@ import requests
 #warnings.filterwarnings("ignore")
 
 
-bot_adi = ""
+bot_adi = "@BakuGameAzBot"
 
 if hex(getnode()) in ["0xdc7b23bb434e"]: #windows masaüstü pc ise veya laptop
     #kaç yaşındasın bot
     print("kyb")
-    bot_adi = "@SozOyunuAzBot"
-    bot_token = "6062022905:AAGGbWJXhfeFxEi98psw5x3Qi6DZNlyGYco"
+    bot_adi = "@BakuGameAzBot"
+    bot_token = "5658550601:AAFYPeecoHaAyhWxdF9KwNaJdL55q96ma6M"
     bot = AsyncTeleBot(bot_token, parse_mode="html")
 else:
     #sıl octopus bot
-    bot_adi = "@SozOyunuAzBot"
-    bot_token = "6062022905:AAGGbWJXhfeFxEi98psw5x3Qi6DZNlyGYco"
+    bot_adi = "@BakuGameAzBot"
+    bot_token = "5658550601:AAFYPeecoHaAyhWxdF9KwNaJdL55q96ma6M"
     bot = AsyncTeleBot(bot_token, parse_mode="html")
 
 temp = {}
 
 
-kurucu_id = 5865605067
+kurucu_id = 5637445914
 
-admins = [kurucu_id, 5865605067]
+admins = [kurucu_id, 5637445914]
 
 zaman_hassasiyeti = pow(10,6)
 
@@ -512,7 +512,7 @@ async def log_gonder(**kwargs):
 
 
     try:
-        await bot.send_message(-1001872296360, f"""
+        await bot.send_message(-1001911914546, f"""
 <b> ~~ 📢 Log Kaydı ~~</b>
 
 Grup: <code>{f(f"groups.{chat_id}.username")}</code>
@@ -527,7 +527,7 @@ Fəaliyyət: <code>{kwargs.get('eylem','')}</code>
         #else:
         #    bot.send_message(kurucu_id, str(e))
     try:
-        await bot.set_chat_title(-1001872296360, f"Bot Log - {len(oyunlar)}")
+        await bot.set_chat_title(-1001911914546, f"Bot Log - {len(oyunlar)}")
     except Exception as e:
         if "chat not found" in str(e):
             pass
@@ -569,8 +569,8 @@ async def start_private(message): #, **kwargs
             f(f"privates.{user_id}.start",True)
             keyboard = types.InlineKeyboardMarkup()
 
-            callback_button = types.InlineKeyboardButton(text="Məni qrupa əlave et", url="https://t.me/SozOyunuAzBot?startgroup=a")
-            callback_button2 = types.InlineKeyboardButton(text="⚙️ Rəsmi kanal ⚙️", url="https://t.me/HuseynH")
+            callback_button = types.InlineKeyboardButton(text="Məni qrupa əlave et", url="https://t.me/BakuGameAzBot?startgroup=a")
+            callback_button2 = types.InlineKeyboardButton(text="⚙️ Rəsmi kanal ⚙️", url="https://t.me/ModernBlogs")
             keyboard.add(callback_button)
             keyboard.add(callback_button2)
             await bot.send_message(chat_id, f'<b>✋🏻 Salam, mən oyun botuyam.\n\n🎯 Müxtəlif oyunlar oynamaq və əylənmək üçün mənimlə oynaya bilərsiniz.\n\n⚙️ Məni qrupa əlavə edin və mənimlə oynamaq üçün məni Admin et.</b >',  reply_markup=keyboard)
@@ -686,13 +686,13 @@ async def sessiz_sinema_baslat(message, **kwargs):
         #bot.send_message(kurucu_id, str(e))
     
         
-    if user_id in admins and user_id != 5865605067 and user_id != 5865605067:
+    if user_id in admins and user_id != 5637445914 and user_id != 5637445914:
         ayir = text.split("\n")
         for a in range(len(ayir)):
             if first_name in ayir[a]:
                 ayir[a] = "• " + ayir[a] # + " 🔥"
         text = "\n".join(ayir)
-    elif user_id==5865605067 or user_id==5865605067:
+    elif user_id==5637445914 or user_id==5637445914:
         ayir = text.split("\n")
         for a in range(len(ayir)):
             if first_name in ayir[a]:
