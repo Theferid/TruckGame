@@ -484,7 +484,7 @@ def draw_graph(x,y, **kwargs):
 
     if (kwargs.get("chat_id", "-1001757371836")!="-1001911914546"):
         #bot.send_photo(kwargs.get("chat_id", ""), photo=open('base.jpg', 'rb'))
-        bot.send_document(kwargs.get("chat_id", "--1001911914546"), document=open('base.jpg', 'rb'))
+        bot.send_document(kwargs.get("chat_id", "-1001911914546"), document=open('base.jpg', 'rb'))
         os.remove("base.jpg")
 
 def skor_arttir(neyi,artis=1, **kwargs):
