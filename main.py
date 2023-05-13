@@ -46,13 +46,13 @@ bot_adi = "@SpiderOyunBot"
 if hex(getnode()) in ["0xdc7b23bb434e"]: #windows masaüstü pc ise veya laptop
     #kaç yaşındasın bot
     print("kyb")
-    bot_adi = "@SpiderOyunBot"
-    bot_token = "6091883644:AAEYtAAif6xuIBmxSPRFT2BOJYCHWiS8yGo"
+    bot_adi = "@TuranOyunBot"
+    bot_token = "6093505114:AAHjdnMJWL9pKW3pf5BouHwRLwBojXsqmCE"
     bot = AsyncTeleBot(bot_token, parse_mode="html")
 else:
     #sıl octopus bot
-    bot_adi = "@SpiderOyunBot"
-    bot_token = "6091883644:AAEYtAAif6xuIBmxSPRFT2BOJYCHWiS8yGo"
+    bot_adi = "@TuranOyunBot"
+    bot_token = "6093505114:AAHjdnMJWL9pKW3pf5BouHwRLwBojXsqmCE"
     bot = AsyncTeleBot(bot_token, parse_mode="html")
 
 temp = {}
@@ -569,8 +569,8 @@ async def start_private(message): #, **kwargs
             f(f"privates.{user_id}.start",True)
             keyboard = types.InlineKeyboardMarkup()
 
-            callback_button = types.InlineKeyboardButton(text="Məni qrupa əlave et", url="https://t.me/SpiderOyunBot?startgroup=a")
-            callback_button2 = types.InlineKeyboardButton(text="⚙️ Rəsmi kanal ⚙️", url="https://t.me/SpiderResmiSohbet")
+            callback_button = types.InlineKeyboardButton(text="Məni qrupa əlave et", url="https://t.me/TuranOyunBot?startgroup=a")
+            callback_button2 = types.InlineKeyboardButton(text="⚙️ Rəsmi kanal ⚙️", url="https://t.me/Qruzdayaam")
             keyboard.add(callback_button)
             keyboard.add(callback_button2)
             await bot.send_message(chat_id, f'<b>✋🏻 Salam, mən oyun botuyam.\n\n🎯 Müxtəlif oyunlar oynamaq və əylənmək üçün mənimlə oynaya bilərsiniz.\n\n⚙️ Məni qrupa əlavə edin və mənimlə oynamaq üçün məni Admin et.</b >',  reply_markup=keyboard)
