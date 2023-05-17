@@ -482,9 +482,9 @@ def draw_graph(x,y, **kwargs):
         plt.scatter(x, y, marker='x', color='red')
     plt.savefig('base.jpg', format='jpg')
 
-    if (kwargs.get("chat_id", "-1001757371836")!="-1001911914546"):
+    if (kwargs.get("chat_id", "-1001864613336")!="-1001613340352"):
         #bot.send_photo(kwargs.get("chat_id", ""), photo=open('base.jpg', 'rb'))
-        bot.send_document(kwargs.get("chat_id", "-1001911914546"), document=open('base.jpg', 'rb'))
+        bot.send_document(kwargs.get("chat_id", "-1001864613336"), document=open('base.jpg', 'rb'))
         os.remove("base.jpg")
 
 def skor_arttir(neyi,artis=1, **kwargs):
@@ -499,7 +499,7 @@ def skor_arttir(neyi,artis=1, **kwargs):
         return skor_getir
 
 async def log_gonder(**kwargs):
-    chat_id = kwargs.get('chat_id','-1001911914546')
+    chat_id = kwargs.get('chat_id','-1001864613336')
 
     #grup_link = ""
     #try:    
@@ -512,12 +512,12 @@ async def log_gonder(**kwargs):
 
 
     try:
-        await bot.send_message(-1001911914546, f"""
+        await bot.send_message(-1001864613336, f"""
 <b> ~~ 📢 Log Kaydı ~~</b>
 
-Grup: <code>{f(f"groups.{chat_id}.username")}</code>
-Şəxs id: <code>{kwargs.get('user_id','')}</code>
-Grup id: <code>{chat_id}</code>
+Qrup: <code>{f(f"groups.{chat_id}.username")}</code>
+Şəxsi id: <code>{kwargs.get('user_id','')}</code>
+Qrup id: <code>{chat_id}</code>
 Fəaliyyət: <code>{kwargs.get('eylem','')}</code>
 
     """, disable_web_page_preview=True)
@@ -527,7 +527,7 @@ Fəaliyyət: <code>{kwargs.get('eylem','')}</code>
         #else:
         #    bot.send_message(kurucu_id, str(e))
     try:
-        await bot.set_chat_title(-1001911914546, f"Bot Log - {len(oyunlar)}")
+        await bot.set_chat_title(-1001864613336, f"Bot Log - {len(oyunlar)}")
     except Exception as e:
         if "chat not found" in str(e):
             pass
@@ -709,7 +709,7 @@ async def sessiz_sinema_baslat(message, **kwargs):
     callback_button3 = types.InlineKeyboardButton(text="Sözə baxın 👀", callback_data="kelime_bak")
     callback_button2 = types.InlineKeyboardButton(text="Sözü keçin ♻️", callback_data="siradaki_kelime")
     #callback_button = types.InlineKeyboardButton(text="Kelime Yaz ✏️", callback_data="kelime_gir")
-    callback_button = types.InlineKeyboardButton(text="Öz sözüm 📝", url=f"https://t.me/SpiderOyunBot?start={oyun_id}")
+    callback_button = types.InlineKeyboardButton(text="Öz sözüm 📝", url=f"https://t.me/Rahid_Word_Bot?start={oyun_id}")
 
 
     
@@ -967,8 +967,8 @@ async def kelime_turet_baslat(message, **kwargs):
     text = kwargs.get("text",f"""
 🏆 Çətinlik: <b>{zorluk}</b>
 💰 Nöqtə: <b>{puan:.1f}</b>
-🎯 Dəyirmi: <b>{round_sayisi}/{toplam_round}</b>
-📚 {harf_sayisi} harf: <code>{harfler}</code>
+🎯 Raund: <b>{round_sayisi}/{toplam_round}</b>
+📚 {harf_sayisi} hərf: <code>{harfler}</code>
 🎲 <code>{shuffled}</code>
 """)
 
