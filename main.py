@@ -828,7 +828,7 @@ async def kelime_turet_baslat(message, **kwargs):
     konumlar = oyun_var_mi(chat_id)
     if konumlar != False:
         bot.send_message(kurucu_id, f'bu asdasd istifadə olunur')
-        bot.send_message(chat_id, f'❌ Hörmətli <a href="tg://user?id={user_id}">{first_name}</a>, Halhazırda aktif oyun var')
+        bot.send_message(chat_id, f'❌ Hörmətli <a href="tg://user?id={user_id}">{first_name}</a>, Hal-hazırda aktiv oyun var')
         return
 
     keyboard = types.InlineKeyboardMarkup()
@@ -2479,14 +2479,14 @@ qaliblər 👑
                 callback_button = types.InlineKeyboardButton(text="Təkrar başlat 🔃", callback_data=oyun_tipi)
                 keyboard.add(callback_button)
 
-                await bot.send_message(chat_id, f"💥 Oyun uğurla ləğv edildi! Cavab: {kelime}", reply_markup=keyboard)
+                await bot.send_message(chat_id, f"❕ Oyun uğurla ləğv edildi!\nCavab: {kelime}", reply_markup=keyboard)
             #f(f"games.{oyun_id}", "$del")
             oyunu_iptal_et(oyun_id)
             await log_gonder(user_id=user_id, chat_id=chat_id, eylem="iptal etti")
         else:
             await bot.send_message(chat_id, "⭐️ Siz admin deyilsiniz")
     else:
-        await bot.send_message(chat_id, "🧩 Aktif bir oyun yoxdur.")
+        await bot.send_message(chat_id, "🧩 Aktiv bir oyun yoxdur.")
 
 @bot.message_handler(commands=['jdjdjd'])
 async def rehber(message):
