@@ -1388,7 +1388,7 @@ async def skor_master(cagri):
             keyboard.add(callback_button3)
             keyboard.add(geri_don_btn)
 
-            await bot.edit_message_text(chat_id=chat_id, message_id=cagri.message.message_id, text="🕹 Hangi skoru görmek istersiniz?", reply_markup=keyboard)
+            await bot.edit_message_text(chat_id=chat_id, message_id=cagri.message.message_id, text="🕹 Hansı hesabı görmək istərdiniz?", reply_markup=keyboard)
         elif ne_skoru == "kelimeoyunu":
             callback_button1 = types.InlineKeyboardButton(text="Qlobal xal 🌐", callback_data="skor_kelimeoyunu_kureselskor")
             callback_button3 = types.InlineKeyboardButton(text="Mənim xalım 📥", callback_data="skor_kelimeoyunu_skor")
@@ -2160,7 +2160,7 @@ async def callback_inline(cagri): #çağrıcı cagrici
 
                 oyunu_iptal_et(oyun_id)
                 #bot.send_message(chat_id,f'❌ <a href="tg://user?id={user_id}">{first_name}</a> kelimeyi pas geçti! Doğru cevap → <b>{kelime}</b> idi.')
-                await kelime_turet_baslat(cagri.message, toplam_round = toplam_round, round = round, skorlar = skorlar, zorluk = zorluk, header = f'❌ <a href="tg://user?id={user_id}">{first_name}</a> kelimeyi pas geçti! Doğru cevap → <b>{kelime}</b> idi.\n')
+                await kelime_turet_baslat(cagri.message, toplam_round = toplam_round, round = round, skorlar = skorlar, zorluk = zorluk, header = f'❌ <a href="tg://user?id={user_id}">{first_name}</a> söz keçdi! Düzgün cavab → <b>{kelime}</b> idi.\n')
                 #t = threading.Thread(target = kelime_turet_baslat, kwargs = {
                 #    "message" : cagri.message, 
                 #    "toplam_round" : toplam_round, 
@@ -2301,7 +2301,7 @@ async def callback_inline(cagri): #çağrıcı cagrici
             if sorgu == "kelime_bak":
                 #def yap():
                 kelime = f(f"games.{oyun_id}.kelime")
-                txt = +kelime + "\n\n"
+                txt = "İzah:" +kelime + "\n\n"
 
                 sozluk =  f(f"games.{oyun_id}.sozluk")
 
@@ -2333,7 +2333,7 @@ async def callback_inline(cagri): #çağrıcı cagrici
                 #def yap():
                 yeni_kelime = random_from_table()["kelime"].replace("'", "")
 
-                txt = +yeni_kelime + "\n\n"
+                txt = "Sual dəyişdirildi:" +yeni_kelime + "\n\n"
 
                     #try:
                     #    getir = tdk.gts.search(yeni_kelime)[0].meanings
