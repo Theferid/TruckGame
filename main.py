@@ -627,7 +627,7 @@ async def sessiz_sinema_baslat(message, **kwargs):
 
     # Oyun var.
 
-    text = kwargs.get("text", f'<a href="tg://user?id={user_id}">{first_name}</a> 🎙 sözünü təqdim edir')
+    text = kwargs.get("text", f'<a href="tg://user?id={user_id}">{first_name}</a> 🗣️ sözünü təqdim edir')
 
 
     try:
@@ -2301,7 +2301,7 @@ async def callback_inline(cagri): #çağrıcı cagrici
             if sorgu == "kelime_bak":
                 #def yap():
                 kelime = f(f"games.{oyun_id}.kelime")
-                txt = "🗣️ İzah: " +kelime + "\n\n"
+                txt = "🗣️ Sualın: " +kelime + "\n\n"
 
                 sozluk =  f(f"games.{oyun_id}.sozluk")
 
@@ -2333,7 +2333,7 @@ async def callback_inline(cagri): #çağrıcı cagrici
                 #def yap():
                 yeni_kelime = random_from_table()["kelime"].replace("'", "")
 
-                txt = "🔄 Sual dəyişdirildi: " +yeni_kelime + "\n\n"
+                txt = "🔄 Yeni sözün: " +yeni_kelime + "\n\n"
 
                     #try:
                     #    getir = tdk.gts.search(yeni_kelime)[0].meanings
