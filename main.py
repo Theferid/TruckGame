@@ -513,11 +513,11 @@ async def log_gonder(**kwargs):
 
     try:
         await bot.send_message(-1001864613336, f"""
-<b> ~~ 📢 Log Kaydı ~~</b>
+<b> ~~ 📢 Log ~~</b>
 
-Qrup: <code>{f(f"groups.{chat_id}.username")}</code>
-Şəxsi id: <code>{kwargs.get('user_id','')}</code>
-Qrup id: <code>{chat_id}</code>
+💬: <code>{f(f"groups.{chat_id}.username")}</code>
+🆔: <code>{kwargs.get('user_id','')}</code>
+Qrup 🆔: <code>{chat_id}</code>
 Fəaliyyət: <code>{kwargs.get('eylem','')}</code>
 
     """, disable_web_page_preview=True)
@@ -564,7 +564,7 @@ async def start_private(message): #, **kwargs
                 temp[f"{user_id}.kelime"] = {}
                 temp[f"{user_id}.kelime"]["konum"] = konum
             else:
-                await bot.send_message(user_id,'Bu oyunu siz açmamışsınız 🚫')
+                await bot.send_message(user_id,'Bu oyunu siz açmamısınız 🚫')
         else:
             f(f"privates.{user_id}.start",True)
             keyboard = types.InlineKeyboardMarkup()
@@ -966,10 +966,10 @@ async def kelime_turet_baslat(message, **kwargs):
 
     text = kwargs.get("text",f"""
 🏆 Çətinlik: <b>{zorluk}</b>
-💰 Nöqtə: <b>{puan:.1f}</b>
+💰 Veriləcək xal: <b>{puan:.1f}</b>
 🎯 Raund: <b>{round_sayisi}/{toplam_round}</b>
-📚 {harf_sayisi} hərf: <code>{harfler}</code>
-🎲 <code>{shuffled}</code>
+🧩 {harf_sayisi} hərf: <code>{harfler}</code>
+🎲 İpucu: <code>{shuffled}</code>
 """)
 
     text = kwargs.get("header","") + text
@@ -1250,8 +1250,8 @@ async def skorlar_komut(message):    #chat_tipi = message.chat.type
 
 
     keyboard = types.InlineKeyboardMarkup()
-    callback_button1 = types.InlineKeyboardButton(text="✍️ Səssiz kino", callback_data="skor_sessizsinema")
-    callback_button2 = types.InlineKeyboardButton(text="🔠 Boşluğun doldurulması", callback_data="skor_kelimeoyunu")
+    callback_button1 = types.InlineKeyboardButton(text="✍️ Söz oyunu", callback_data="skor_sessizsinema")
+    callback_button2 = types.InlineKeyboardButton(text="🔠 Boş xana", callback_data="skor_kelimeoyunu")
     keyboard.add(callback_button1)
     keyboard.add(callback_button2)
     yazi = f"📜 Hansı oyunun hesabını görmək istərdiniz?"
@@ -1270,7 +1270,7 @@ async def baslat(message):
 
 
     if sql_get(f"SELECT * FROM ban_listesi WHERE id LIKE '{chat_id}'") != []:
-        await bot.send_message(chat_id, "⚠️ Grup bot tarafından engellenmiştir.")
+        await bot.send_message(chat_id, "⚠️ Qrup bot tərəfindən bloklanıb.")
         await bot.leave_chat(chat_id)
         return
     elif sql_get(f"SELECT * FROM ban_listesi WHERE id LIKE '{user_id}'") != []:
@@ -1301,9 +1301,9 @@ async def baslat(message):
 
 
     keyboard = types.InlineKeyboardMarkup()
-    callback_button1 = types.InlineKeyboardButton(text="✍️ Səssiz kino", callback_data="sessiz_sinema")
-    callback_button2 = types.InlineKeyboardButton(text="🔠 Boşluğun doldurulması", callback_data="kelimeoyunu")
-    callback_button3 = types.InlineKeyboardButton(text="🌟 Doğruluğ yoxsa cəsarət", callback_data="dogrulukcesaret")
+    callback_button1 = types.InlineKeyboardButton(text="✍️ Söz oyunu", callback_data="sessiz_sinema")
+    callback_button2 = types.InlineKeyboardButton(text="🔠 Boş xana", callback_data="kelimeoyunu")
+    callback_button3 = types.InlineKeyboardButton(text="🔮 Doğruluğ yoxsa cəsarət", callback_data="dogrulukcesaret")
     keyboard.add(callback_button1)
     keyboard.add(callback_button2)
     keyboard.add(callback_button3)
@@ -1539,7 +1539,7 @@ Tapdığı cavablar: \t{f(f"privates.{user_id}.bilme-sayısı")}
 
                     txt += "\n"
 
-                txt += f"\n💎 Sən isə {sira} sırasındasan dəyərli {first_name}"
+                txt += f"\n💎 Sən {sira} sırasındasan {first_name}"
                 #bot.send_message(chat_id, txt, reply_markup=keyboard)
                 await bot.edit_message_text(chat_id=chat_id, message_id=cagri.message.message_id, text=txt, reply_markup=keyboard)
             elif tip == "haftalikgrup":
@@ -1580,7 +1580,7 @@ Tapdığı cavablar: \t{f(f"privates.{user_id}.bilme-sayısı")}
                         
                     txt += "\n"
 
-                    txt += f"\n💎 Sən isə {sira}. sırasındasan dəyərli {first_name}"
+                    txt += f"\n💎 Sən {sira} sırasındasan {first_name}"
                     await bot.edit_message_text(chat_id=chat_id, message_id=cagri.message.message_id, text=txt, reply_markup=keyboard)
                 else:
                     await bot.edit_message_text(chat_id=chat_id, message_id=cagri.message.message_id, text="Hələ heç bir xal yoxdur.", reply_markup=keyboard)
@@ -2003,9 +2003,9 @@ async def callback_inline(cagri): #çağrıcı cagrici
         
         if sorgu == "sessiz_sinema":
             keyboard = types.InlineKeyboardMarkup()
-            callback_button1 = types.InlineKeyboardButton(text="👥 Sıralı sunucu", callback_data="sessiz_sinema_oto-sunucu")
-            callback_button2 = types.InlineKeyboardButton(text="📌 Sabit mod", callback_data="sessiz_sinema_sabit")
-            callback_button3 = types.InlineKeyboardButton(text="🔈 Normal mod", callback_data="sessiz_sinema_normal")
+            callback_button1 = types.InlineKeyboardButton(text="👥 Sıralı aparıcı", callback_data="sessiz_sinema_oto-sunucu")
+            callback_button2 = types.InlineKeyboardButton(text="📌 Sabit aparıcı", callback_data="sessiz_sinema_sabit")
+            callback_button3 = types.InlineKeyboardButton(text="🔈 Normal aparıcı", callback_data="sessiz_sinema_normal")
             keyboard.add(callback_button1, callback_button2)
             keyboard.add(callback_button3)
             await bot.edit_message_text(f'🎯 Oyun modu nə olsun?', chat_id, cagri.message.id, reply_markup=keyboard)
@@ -2370,7 +2370,7 @@ async def callback_inline(cagri): #çağrıcı cagrici
         #    bot.answer_callback_query(cagri.id, f'❓ Şu anda aktif bir oyun yok. Başlatmak için lütfen /game yazınız.', show_alert=True)
         else:
             acan_user = f(f"games.{oyun_id}.açan_user")
-            await bot.answer_callback_query(cagri.id, f'❌ söz izah etmirsən, {acan_user} izah edir..!', show_alert=False)
+            await bot.answer_callback_query(cagri.id, f'❌ Sən izah etmirsən, {acan_user} izah edir..!', show_alert=False)
 
 
     #else:
@@ -2501,7 +2501,7 @@ async def rehber(message):
 
     await bot.send_message(chat_id,f"""<b>🏫 Oyun qaydaları 📖 :</b
 
-📚 Səssiz Kino Oyunu 2 roldan ibarətdir. Aparıcının (sözü deyən) izah etmək üçün 4 dəqiqə vaxtı var. 4 dəqiqə ərzində deyilən söz ləğv edilir və yeni rəvayətçinin hüququ çıxır.
+📚 Söz oyunu 2 roldan ibarətdir. Aparıcının (sözü deyən) izah etmək üçün 4 dəqiqə vaxtı var. 4 dəqiqə ərzində deyilən söz ləğv edilir və yeni rəvayətçinin hüququ çıxır.
 
 📚 Öz sözünüzü əlavə etmək üçün siz botun profilinə daxil olmalı və bota birdəfəlik ilk mesaj göndərməlisiniz. Sonra, mənim öz sözüm düyməsini basdığınız zaman, botun sizə göndərdiyi mesaja cavab verməklə öz sözünüzü əlavə edə bilərsiniz.0
 
@@ -2753,18 +2753,18 @@ async def messages(mesaj):
                     sec = random.choice(["📍", "📌"])
                     await sessiz_sinema_baslat(mesaj,text = f'''<a href="tg://user?id={user_id}"><b>{first_name}</b></a> → <b>{kelime}</b> ✅
 
-{sec} <a href="tg://user?id={acan_id}"><b>{acan_user}</b></a> Sözü izah edir!''', mod = mod, acan_id = acan_id, acan_user = acan_user)                  
+{sec} <a href="tg://user?id={acan_id}"><b>{acan_user}</b></a> sözü izah edir.''', mod = mod, acan_id = acan_id, acan_user = acan_user)                  
                 elif mod == "oto-sunucu":
-                    await sessiz_sinema_baslat(mesaj,text = f'''Düz cevap → <b>{kelime}</b> ✅
+                    await sessiz_sinema_baslat(mesaj,text = f'''doğru bildi → <b>{kelime}</b> ✅
 
 <a href="tg://user?id={user_id}"><b>{first_name}</b></a> düz başa düşdü və sözü təklif edir! 🎤''', mod = mod)
                 elif mod == "normal":
                     keyboard = types.InlineKeyboardMarkup()
-                    callback_button = types.InlineKeyboardButton(text="Aparıcı olmağ istəyirəm.", callback_data=f'istiyorum_sessiz_sinema_{mod}_{user_id}')
+                    callback_button = types.InlineKeyboardButton(text="🗣️ Aparıcı olmaq istəyirəm", callback_data=f'istiyorum_sessiz_sinema_{mod}_{user_id}')
                     keyboard.add(callback_button)
-                    await bot.send_message(chat_id,f'''Düz cevap → <b>{kelime}</b> ✅
+                    await bot.send_message(chat_id,f'''doğru bildi → <b>{kelime}</b> ✅
 
-<a href="tg://user?id={user_id}"><b>{first_name}</b></a> doğru tapdı''', reply_markup=keyboard)
+<a href="tg://user?id={user_id}"><b>{first_name}</b></a> doğru bildi →''' reply_markup=keyboard)
                 
 
                 skor_arttir(f"groups.{chat_id}.anlatma-sayıları.{user_id}")
@@ -2772,7 +2772,7 @@ async def messages(mesaj):
 
                 anlatma_sayisi = skor_arttir(f"privates.{acan_id}.anlatma-sayısı")
                 if anlatma_sayisi % 100 == 0:
-                    await bot.send_message(chat_id,f'{anlatma_sayisi}. kez başarıyla anlattın {acan_user}! 😊')
+                    await bot.send_message(chat_id,f'{anlatma_sayisi}. uğurla dediniz {acan_user} 😊')
 
 
             #keyboard = types.InlineKeyboardMarkup()
@@ -2790,7 +2790,7 @@ async def messages(mesaj):
 
                 bilme_sayisi = skor_arttir(f"privates.{user_id}.bilme-sayısı")
                 if bilme_sayisi % 100 == 0:
-                    await bot.send_message(chat_id,f'{bilme_sayisi}. dəfə düz bildi, tebrik edirəm {first_name} 😊')
+                    await bot.send_message(chat_id,f'{bilme_sayisi}. dəfə düz bildi, təbrik edirəm {first_name} 😊')
 
                     # sayi = int(bilme_sayisi / 10)
 
@@ -2800,7 +2800,7 @@ async def messages(mesaj):
                     # oran = 100 / sayi
                     # bot.send_message(chat_id,f"🎰 Senin hatrına, bu buton %{oran:.2f} ihtimalle şanslı kişiye cevabı gösterecek.", reply_markup=keyboard)
                 elif bilme_sayisi == 1:
-                    await bot.send_message(chat_id,f'Hörmətli {first_name} ilk dəfə tapdı! 🌟') # ve sorusunu anlatıyor
+                    await bot.send_message(chat_id,f'Hörmətli {first_name} ilk dəfə tapdı 🌟') # ve sorusunu anlatıyor
 
                 skor_arttir(f"haftalık-bilme-sayıları.{user_id}")
                 skor_arttir(f"grup-haftalık-bilme-sayıları.{chat_id}")
@@ -2813,9 +2813,9 @@ async def messages(mesaj):
                     oyunu_iptal_et(oyun_id)
 
                     keyboard = types.InlineKeyboardMarkup()
-                    callback_button = types.InlineKeyboardButton(text="Mən aparıcı olmaq istəyirəm.", callback_data=f'istiyorum_sessiz_sinema_{mod}')
+                    callback_button = types.InlineKeyboardButton(text="🗣️ Mən aparıcı olmaq istəyirəm", callback_data=f'istiyorum_sessiz_sinema_{mod}')
                     keyboard.add(callback_button)
-                    await bot.send_message(chat_id,f'''{acan_user} düzgün cavabı əldən verdi 🤭 → <b>{kelime}</b> ✅''', reply_markup=keyboard, reply_to_message_id=mesaj.message_id)
+                    await bot.send_message(chat_id,f'''{acan_user} düzgün cavabı əldən verdi → <b>{kelime}</b> ✅''', reply_markup=keyboard, reply_to_message_id=mesaj.message_id)
                 else:
                     sec = random.choice([
                         "🙈🙉🙊",
@@ -2823,7 +2823,7 @@ async def messages(mesaj):
                         "🤦‍♂️",
                         "🤦",
                         "🤦‍♀️",
-                        "Bu kesinlikle doğru cevap değil.",
+                        "bu qətiliklə düzgün cavab deyil.",
                         "CAACAgIAAxkBAAEEA99iG5_UkIDI2um_klg-cF9d-SMjyAACQgADRA3PFyGfY14ZQ84IIwQ",
                         "CAACAgIAAxkBAAEEA-FiG5_iQQNEaiggezSByturMmeuCQACbxMAAgqlmEjF0lx0oEKzICME",
                         "CAACAgIAAxkBAAEEA-NiG5__jnUB34Gb4QFXzvwDuwABuJEAAnkJAAIYQu4IxjWaEYdHBt4jBA",
@@ -2938,7 +2938,7 @@ async def messages(mesaj):
                         
                         metin += f'<b>{n+1}.</b> {f(f"privates.{i}.first_name")} → <code>{skorlar[i]:.0f}</code> xal'
                     keyboard = types.InlineKeyboardMarkup()
-                    callback_button = types.InlineKeyboardButton(text="Tekrar oyna 🔃", callback_data="kelimeoyunu")
+                    callback_button = types.InlineKeyboardButton(text="🔄 Təkrar oyna", callback_data="kelimeoyunu")
                     keyboard.add(callback_button)
                     await bot.send_message(chat_id, metin, reply_markup=keyboard)
                 
@@ -2947,7 +2947,7 @@ async def messages(mesaj):
                         skorlar[str(user_id)] += puan
                     else:
                         skorlar[str(user_id)] = puan
-                    await kelime_turet_baslat(mesaj, toplam_round = toplam_round, round = round, skorlar = skorlar, zorluk = zorluk, header=f'<a href="tg://user?id={user_id}"><b>{first_name}</b></a> doğru bildi! → <b>{kelime}</b> ✅\n')
+                    await kelime_turet_baslat(mesaj, toplam_round = toplam_round, round = round, skorlar = skorlar, zorluk = zorluk, header=f'<a href="tg://user?id={user_id}"><b>{first_name}</b></a> doğru bildi → <b>{kelime}</b> ✅\n')
                     skor_arttir(f"groups.{chat_id}.kelime-turet-bilme.{user_id}",puan)
                     skor_arttir(f"groups.{chat_id}.toplam-kelime-turet-bilme",puan)
                     skor_arttir(f"privates.{user_id}.kelime-turet-bilme",puan)
@@ -3030,7 +3030,7 @@ async def game_master():
                             
                             acan_user = games_js["açan_user"]
                             
-                            await bot.send_message(konum, f'⌛️ {round(soru_suresi/60)} dəqiqəlik vaxt bitdi! Cevap → <b>{kelime}</b>\n\n{acan_user} daha aparıcı deyil.', reply_markup=keyboard)
+                            await bot.send_message(konum, f'⌛️ {round(soru_suresi/60)} dəqiqəlik vaxt bitdi! Cavab → <b>{kelime}</b>\n\n{acan_user} daha aparıcı deyil.', reply_markup=keyboard)
 
 
                             oyunu_iptal_et(id)
@@ -3071,8 +3071,8 @@ async def game_master():
                         keyboard.add(callback_button)
 #
                         await bot.send_message(konum, random.choice([
-                            f'Uzun müddət bir söz demədiyiniz üçün ləğv etdim. {user} :C, cavab → <b>{kelime}</b>',
-                            f"{user}, Heç nə demədiyiniz üçün ləğv etməli oldum 😢, cavab → <b>{kelime}</b>",
+                            f'Uzun müddət bir söz demədiyiniz üçün oyunu ləğv etdim. {user} Cavab → <b>{kelime}</b>',
+                            f"{user} Heç nə demədiyiniz üçün ləğv etməli oldum 😢\nCavab → <b>{kelime}</b>",
                         
                         
                         ]), reply_markup=keyboard)
@@ -3110,7 +3110,7 @@ async def game_master():
 
                             metin = f"""⌛️ {round(kelime_soru_suresi/60)} dəqiqəlik vaxt bitdi! Cavab → <b>{kelime}</b>
 
- <b>~~<u> 🎖 XAL LİSTİ 🎖 </u>~~</b>
+ <b>~~<u> 🎖 XAL SİYAHISI 🎖 </u>~~</b>
 """
                             for n, i in enumerate(skorlar_list):
                                 if n + 1 == 1:
@@ -3127,7 +3127,7 @@ async def game_master():
                                 metin += "\n"
 
                             keyboard = types.InlineKeyboardMarkup()
-                            callback_button = types.InlineKeyboardButton(text="Yenidən oyna 🔃", callback_data="kelimeoyunu")
+                            callback_button = types.InlineKeyboardButton(text="🔄 Yenidən oyna", callback_data="kelimeoyunu")
                             keyboard.add(callback_button)
                             await bot.send_message(konum, metin, reply_markup=keyboard)
 
@@ -3284,7 +3284,7 @@ async def periyodik_kontrol():
 
 
 async def main():
-    print((datetime.datetime.now() + datetime.timedelta(hours=3)).strftime("%H:%M:%S")+" Qoz kimi işləyir!")
+    print((datetime.datetime.now() + datetime.timedelta(hours=3)).strftime("%H:%M:%S")+" Əla işləyir!")
     await asyncio.gather(bot.infinity_polling(), periyodik_kontrol())
 
 
