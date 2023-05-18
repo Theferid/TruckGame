@@ -1251,7 +1251,7 @@ async def skorlar_komut(message):    #chat_tipi = message.chat.type
 
     keyboard = types.InlineKeyboardMarkup()
     callback_button1 = types.InlineKeyboardButton(text="✍️ Söz oyunu", callback_data="skor_sessizsinema")
-    callback_button2 = types.InlineKeyboardButton(text="🔠 Boş xana", callback_data="skor_kelimeoyunu")
+    callback_button2 = types.InlineKeyboardButton(text="🧩 Boş xana", callback_data="skor_kelimeoyunu")
     keyboard.add(callback_button1)
     keyboard.add(callback_button2)
     yazi = f"📜 Hansı oyunun hesabını görmək istərdiniz?"
