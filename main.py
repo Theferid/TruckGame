@@ -2357,10 +2357,10 @@ async def callback_inline(cagri): #çağrıcı cagrici
                 oyun_tipi = f(f"games.{oyun_id}.oyun_tipi")
 
                 keyboard = types.InlineKeyboardMarkup()
-                callback_button = types.InlineKeyboardButton(text="Aparıcı olmağ istəyirəm! 📢", callback_data="istiyorum_"+oyun_tipi)
+                callback_button = types.InlineKeyboardButton(text="Aparıcı olmaq istəyirəm! 📢", callback_data="istiyorum_"+oyun_tipi)
                 keyboard.add(callback_button)
                 kelime = f(f"games.{oyun_id}.kelime")
-                await bot.send_message(chat_id, f'🔴 <a href="tg://user?id={user_id}">{first_name}</a> Aparıcı olmağ istəmir! → {kelime}', reply_markup=keyboard)
+                await bot.send_message(chat_id, f'🔴 <a href="tg://user?id={user_id}">{first_name}</a> Aparıcı olmaq istəmir!\n→ {kelime}', reply_markup=keyboard)
                 
                 #f(f"games.{oyun_id}", "$del")
                 oyunu_iptal_et(oyun_id)
@@ -3067,7 +3067,7 @@ async def game_master():
                         kelime = games_js["kelime"]
 
                         keyboard = types.InlineKeyboardMarkup()
-                        callback_button = types.InlineKeyboardButton(text="Aparıcı olmağ istəyirəm! 🙋🏻🙋🏻‍♀️", callback_data="istiyorum")
+                        callback_button = types.InlineKeyboardButton(text="Aparıcı olmaq istəyirəm! 🙋🏻🙋🏻‍♀️", callback_data="istiyorum")
                         keyboard.add(callback_button)
 #
                         await bot.send_message(konum, random.choice([
