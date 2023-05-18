@@ -1194,7 +1194,7 @@ async def cesaret(message):
     user_id = message.from_user.id #sabit    
     
     keyboard = types.InlineKeyboardMarkup()
-    callback_button1 = types.InlineKeyboardButton(text="🎯 Doğruluk", callback_data="dogrulukcesaret_d")
+    callback_button1 = types.InlineKeyboardButton(text="🎯 Doğruluq", callback_data="dogrulukcesaret_d")
     callback_button2 = types.InlineKeyboardButton(text="🌟 Cəsarət", callback_data="dogrulukcesaret_c")
     keyboard.add(callback_button1, callback_button2)
     
@@ -1410,7 +1410,7 @@ async def skor_master(cagri):
                 keyboard.add(callback_button1, callback_button3)
 
                 if skorlar!=[] and "dict" in str(type(skorlar)):
-                    txt = f"Bu qrupda ən yaxşısı {max_skor} oyuncu 📜\n\n"
+                    txt = f"Bu qrupda ən yaxşı {max_skor} oyunçu 📜\n\n"
 
 
                     skorlar = dict(sorted(skorlar.items(), key=lambda item: item[1]))
@@ -1830,7 +1830,7 @@ Tapdığı cavablar: \t{f(f"privates.{user_id}.bilme-sayısı")}
                 keyboard.add(callback_button1, callback_button3)
 
                 if skorlar!=[] and "dict" in str(type(skorlar)):
-                    txt = f"Bu qrupda ən yaxşısı {max_skor} oyuncu 📜\n\n"
+                    txt = f"Bu qrupda ən yaxşı {max_skor} oyunçu 📜\n\n"
 
 
                     skorlar = dict(sorted(skorlar.items(), key=lambda item: item[1]))                   
@@ -2754,14 +2754,14 @@ async def messages(mesaj):
 
 {sec} <a href="tg://user?id={acan_id}"><b>{acan_user}</b></a> sözü izah edir.''', mod = mod, acan_id = acan_id, acan_user = acan_user)                  
                 elif mod == "oto-sunucu":
-                    await sessiz_sinema_baslat(mesaj,text = f'''doğru bildi → <b>{kelime}</b> ✅
+                    await sessiz_sinema_baslat(mesaj,text = f'''Doğru bildi→ <b>{kelime}</b> ✅
 
 <a href="tg://user?id={user_id}"><b>{first_name}</b></a> düz başa düşdü və sözü izah edir 🗣️''', mod = mod)
                 elif mod == "normal":
                     keyboard = types.InlineKeyboardMarkup()
                     callback_button = types.InlineKeyboardButton(text="🗣️ Aparıcı olmaq istəyirəm!", callback_data=f'istiyorum_sessiz_sinema_{mod}_{user_id}')
                     keyboard.add(callback_button)
-                    await bot.send_message(chat_id,f'''doğru bildi → <b>{kelime}</b> ✅
+                    await bot.send_message(chat_id,f'''Doğru bildi→ <b>{kelime}</b> ✅
 
 <a href="tg://user?id={user_id}"><b>{first_name}</b></a> doğru tapdı''', reply_markup=keyboard)
                 
@@ -2894,7 +2894,7 @@ async def messages(mesaj):
         ): # and soran kişi değilse
 
             if acan_id != user_id or msg == "**":
-                #bot.send_message(chat_id,f'<a href="tg://user?id={user_id}"><b>{first_name}</b></a> doğru bildi! → <b>{kelime}</b> ✅')
+                #bot.send_message(chat_id,f'<a href="tg://user?id={user_id}"><b>{first_name}</b></a> Doğru bildi bildi! → <b>{kelime}</b> ✅')
 
                 f(f"privates.{user_id}.username",username)
                 f(f"privates.{user_id}.first_name",first_name)
@@ -2946,7 +2946,7 @@ async def messages(mesaj):
                         skorlar[str(user_id)] += puan
                     else:
                         skorlar[str(user_id)] = puan
-                    await kelime_turet_baslat(mesaj, toplam_round = toplam_round, round = round, skorlar = skorlar, zorluk = zorluk, header=f'<a href="tg://user?id={user_id}"><b>{first_name}</b></a> doğru bildi → <b>{kelime}</b> ✅\n')
+                    await kelime_turet_baslat(mesaj, toplam_round = toplam_round, round = round, skorlar = skorlar, zorluk = zorluk, header=f'<a href="tg://user?id={user_id}"><b>{first_name}</b></a> Doğru bildi→ <b>{kelime}</b> ✅\n')
                     skor_arttir(f"groups.{chat_id}.kelime-turet-bilme.{user_id}",puan)
                     skor_arttir(f"groups.{chat_id}.toplam-kelime-turet-bilme",puan)
                     skor_arttir(f"privates.{user_id}.kelime-turet-bilme",puan)
