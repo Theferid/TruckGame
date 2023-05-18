@@ -1387,7 +1387,7 @@ async def skor_master(cagri):
             keyboard.add(callback_button3)
             keyboard.add(geri_don_btn)
 
-            await bot.edit_message_text(chat_id=chat_id, message_id=cagri.message.message_id, text="🕹 Hansı puanları görmək istərdiniz?", reply_markup=keyboard)
+            await bot.edit_message_text(chat_id=chat_id, message_id=cagri.message.message_id, text="🔸 Hansı puanları görmək istərdiniz?", reply_markup=keyboard)
         elif ne_skoru == "kelimeoyunu":
             callback_button1 = types.InlineKeyboardButton(text="Qlobal puan 🌐", callback_data="skor_kelimeoyunu_kureselskor")
             callback_button3 = types.InlineKeyboardButton(text="Qrup puan 💬", callback_data="skor_kelimeoyunu_skor")
@@ -1395,7 +1395,7 @@ async def skor_master(cagri):
             keyboard.add(callback_button1, callback_button3)
             keyboard.add(geri_don_btn)
 
-            await bot.edit_message_text(chat_id=chat_id, message_id=cagri.message.message_id, text="🕹 Hansı puanları görmək istərdiniz?", reply_markup=keyboard)
+            await bot.edit_message_text(chat_id=chat_id, message_id=cagri.message.message_id, text="🔸 Hansı puanları görmək istərdiniz?", reply_markup=keyboard)
         else:
             await bot.answer_callback_query(cagri.id, text="😞")
     else:
@@ -1458,14 +1458,14 @@ async def skor_master(cagri):
                 if bilme == "":
                     bilme = 0
 
-                txt = f'''📈 Oyunçu xalı {first_name}
+                txt = f'''👤 {first_name} oyunçunun puanları
 
-Bu qrupda
+🔹 Bu qrupda
 Aparıcı olub: \t{sunucu_sayisi}
 Uğurla təqdim edildi: \t{anlatmis}
 Tapdığı cavablar: \t{bilme}
 
-Bütün qruplarda
+🔸 Bütün qruplarda
 Aparıcı olub: \t{f(f"privates.{user_id}.sunucu-sayısı")}
 Uğurla təqdim edildi: \t{f(f"privates.{user_id}.anlatma-sayısı")}
 Tapdığı cavablar: \t{f(f"privates.{user_id}.bilme-sayısı")}
@@ -1792,7 +1792,7 @@ Tapdığı cavablar: \t{f(f"privates.{user_id}.bilme-sayısı")}
 
 
                 #txt = "En iyi max_skor Grup 📜\n\n" + "\n".join([f"<b>{n+1}</b>. {f(f'groups.{i[0]}.username')} - {i[1]} cevap" for n,i in enumerate(skorlar_list)])
-                txt = f"Bütün zamanların ən yaxşısı {max_skor} oyuncusu 📜\n\n"
+                txt = f"Bütün zamanların ən yaxşı {max_skor} oyunçusu 📜\n\n"
                 
                 for n,i in enumerate(skorlar_list):
                     if n+1 < 6:
