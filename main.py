@@ -965,7 +965,6 @@ async def kelime_turet_baslat(message, **kwargs):
 #{anlamlar}
 
     text = kwargs.get("text",f"""
-🏆 Çətinlik: <b>{zorluk}</b>
 💰 Veriləcək xal: <b>{puan:.1f}</b>
 🎯 Raund: <b>{round_sayisi}/{toplam_round}</b>
 🧩 {harf_sayisi} hərf: <code>{harfler}</code>
