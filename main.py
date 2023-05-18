@@ -2038,7 +2038,7 @@ async def callback_inline(cagri): #çağrıcı cagrici
                 callback_button2 = types.InlineKeyboardButton(text="💣 Çətin (x4 puan)", callback_data=zor_callback)
                 keyboard.add(callback_button1, callback_button2)
                 #bot.send_message(chat_id, f'🎯 <a href="tg://user?id={user_id}">{first_name}</a>, {ayir[1]} round oyunun zorluğu ne olsun?', reply_markup=keyboard)                
-                await bot.edit_message_text(f'🎯 <a href="tg://user?id={user_id}">{first_name}</a> {ayir[1]} round oyunun çətinliyi neçə olsun?', chat_id, cagri.message.id, reply_markup=keyboard)
+                await bot.edit_message_text(f'🎯 <a href="tg://user?id={user_id}">{first_name}</a> {ayir[1]} oyun neçə raund olsun?', chat_id, cagri.message.id, reply_markup=keyboard)
                 return
             elif len(ayir) == 3:
                 if ayir[1] == "inf":
@@ -2066,7 +2066,7 @@ async def callback_inline(cagri): #çağrıcı cagrici
             
             keyboard.add(callback_button1, callback_button2, callback_button3, callback_button4, callback_button5, callback_button6)
             keyboard.add(callback_button7)
-            await bot.send_message(chat_id, f'📍 <a href="tg://user?id={user_id}">{first_name}</a>, oyun neçə round olsun?', reply_markup=keyboard)
+            await bot.send_message(chat_id, f'📍 <a href="tg://user?id={user_id}">{first_name}</a> oyun neçə raund olsun?', reply_markup=keyboard)
             
             if not "skor" in cagri.message.text.lower():
                 await bot.delete_message(chat_id, cagri.message.id)
@@ -3107,7 +3107,7 @@ async def game_master():
                             skorlar = dict(sorted(skorlar.items(), key=lambda item: item[1]))
                             skorlar_list = list(skorlar)[::-1]
 
-                            metin = f"""⌛️ {round(kelime_soru_suresi/60)} dəqiqəlik vaxt bitdi! Cavab → <b>{kelime}</b>
+                            metin = f"""⌛️ {round(kelime_soru_suresi/60)} dəqiqəlik vaxt bitdi!\nCavab → <b>{kelime}</b>
 
  <b>~~<u> 🎖 XAL SİYAHISI 🎖 </u>~~</b>
 """
