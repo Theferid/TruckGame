@@ -2757,14 +2757,14 @@ async def messages(mesaj):
                 elif mod == "oto-sunucu":
                     await sessiz_sinema_baslat(mesaj,text = f'''doğru bildi → <b>{kelime}</b> ✅
 
-<a href="tg://user?id={user_id}"><b>{first_name}</b></a> düz başa düşdü və sözü təklif edir! 🎤''', mod = mod)
+<a href="tg://user?id={user_id}"><b>{first_name}</b></a> düz başa düşdü və sözü izah edir 🗣️''', mod = mod)
                 elif mod == "normal":
                     keyboard = types.InlineKeyboardMarkup()
-                    callback_button = types.InlineKeyboardButton(text="🗣️ Aparıcı olmaq istəyirəm", callback_data=f'istiyorum_sessiz_sinema_{mod}_{user_id}')
+                    callback_button = types.InlineKeyboardButton(text="🗣️ Aparıcı olmaq istəyirəm.", callback_data=f'istiyorum_sessiz_sinema_{mod}_{user_id}')
                     keyboard.add(callback_button)
                     await bot.send_message(chat_id,f'''doğru bildi → <b>{kelime}</b> ✅
 
-<a href="tg://user?id={user_id}"><b>{first_name}</b></a> doğru bildi →''' reply_markup=keyboard)
+<a href="tg://user?id={user_id}"><b>{first_name}</b></a> doğru tapdı''', reply_markup=keyboard)
                 
 
                 skor_arttir(f"groups.{chat_id}.anlatma-sayıları.{user_id}")
