@@ -1242,7 +1242,7 @@ async def dogruluk(message):
 
 
 
-@bot.message_handler(commands=['rating'])
+@bot.message_handler(commands=['reytinq'])
 async def skorlar_komut(message):    #chat_tipi = message.chat.type
     chat_id = message.chat.id #değişken, private veya group
     user_id = message.from_user.id
