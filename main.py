@@ -1253,7 +1253,7 @@ async def skorlar_komut(message):    #chat_tipi = message.chat.type
     callback_button2 = types.InlineKeyboardButton(text="🧩 Boş xana", callback_data="skor_kelimeoyunu")
     keyboard.add(callback_button1)
     keyboard.add(callback_button2)
-    yazi = f"📜 Hansı oyunun hesabını görmək istərdiniz?"
+    yazi = f"📜 Hansı oyunun puanları görmək istərdiniz?"
     try:
         id = message.id
         await bot.edit_message_text(chat_id=chat_id, message_id=id, text=yazi, reply_markup=keyboard)
@@ -1379,23 +1379,23 @@ async def skor_master(cagri):
     
     if len(ayir) == 2:
         if ne_skoru == "sessizsinema":
-            callback_button1 = types.InlineKeyboardButton(text="Qlobal xal 🌐", callback_data="skor_sessizsinema_kureselskor")
-            callback_button2 = types.InlineKeyboardButton(text="Mənim xalım 📊", callback_data="skor_sessizsinema_skorum")
-            callback_button3 = types.InlineKeyboardButton(text="Qrupda xal 📥", callback_data="skor_sessizsinema_skor")           
+            callback_button1 = types.InlineKeyboardButton(text="Qlobal puan 🌐", callback_data="skor_sessizsinema_kureselskor")
+            callback_button2 = types.InlineKeyboardButton(text="Mənim puam 📊", callback_data="skor_sessizsinema_skorum")
+            callback_button3 = types.InlineKeyboardButton(text="Qrup puan 💬", callback_data="skor_sessizsinema_skor")           
             geri_don_btn = types.InlineKeyboardButton(text="🔙 Geri", callback_data='skor_')
             keyboard.add(callback_button2, callback_button1)
             keyboard.add(callback_button3)
             keyboard.add(geri_don_btn)
 
-            await bot.edit_message_text(chat_id=chat_id, message_id=cagri.message.message_id, text="🕹 Hansı hesabı görmək istərdiniz?", reply_markup=keyboard)
+            await bot.edit_message_text(chat_id=chat_id, message_id=cagri.message.message_id, text="🕹 Hansı puanları görmək istərdiniz?", reply_markup=keyboard)
         elif ne_skoru == "kelimeoyunu":
-            callback_button1 = types.InlineKeyboardButton(text="Qlobal xal 🌐", callback_data="skor_kelimeoyunu_kureselskor")
-            callback_button3 = types.InlineKeyboardButton(text="Mənim xalım 📥", callback_data="skor_kelimeoyunu_skor")
+            callback_button1 = types.InlineKeyboardButton(text="Qlobal puan 🌐", callback_data="skor_kelimeoyunu_kureselskor")
+            callback_button3 = types.InlineKeyboardButton(text="Qrup puan 💬", callback_data="skor_kelimeoyunu_skor")
             geri_don_btn = types.InlineKeyboardButton(text="🔙 Geri", callback_data='skor_')
             keyboard.add(callback_button1, callback_button3)
             keyboard.add(geri_don_btn)
 
-            await bot.edit_message_text(chat_id=chat_id, message_id=cagri.message.message_id, text="🕹 Hansı hesabı görmək istərdiniz?", reply_markup=keyboard)
+            await bot.edit_message_text(chat_id=chat_id, message_id=cagri.message.message_id, text="🕹 Hansı puanları görmək istərdiniz?", reply_markup=keyboard)
         else:
             await bot.answer_callback_query(cagri.id, text="😞")
     else:
@@ -2508,7 +2508,7 @@ async def rehber(message):
 
 📚 Qrupdaxili həftəlik ballar və qlobal həftəlik ballarla yarışlar təşkil edə bilərsiniz.
 
-🙏 Yardım və suallar üçün: @HuseynH
+👨🏻‍💻 Təklif və suallar üçün: @Rahid_7
 """)
 
 
