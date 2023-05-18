@@ -2762,7 +2762,7 @@ async def messages(mesaj):
                     keyboard = types.InlineKeyboardMarkup()
                     callback_button = types.InlineKeyboardButton(text="🗣️ Aparıcı olmaq istəyirəm", callback_data=f'istiyorum_sessiz_sinema_{mod}_{user_id}')
                     keyboard.add(callback_button)
-                    await bot.send_message(chat_id,text = f'''doğru bildi → <b>{kelime}</b> ✅
+                    await bot.send_message(chat_id,f'''doğru bildi → <b>{kelime}</b> ✅
 
 <a href="tg://user?id={user_id}"><b>{first_name}</b></a> doğru bildi →''' reply_markup=keyboard)
                 
