@@ -1382,7 +1382,7 @@ async def skor_master(cagri):
             callback_button1 = types.InlineKeyboardButton(text="Qlobal xal 🌐", callback_data="skor_sessizsinema_kureselskor")
             callback_button2 = types.InlineKeyboardButton(text="Mənim xalım 📊", callback_data="skor_sessizsinema_skorum")
             callback_button3 = types.InlineKeyboardButton(text="Qrupda xal 📥", callback_data="skor_sessizsinema_skor")           
-            geri_don_btn = types.InlineKeyboardButton(text="🔙 Geri qayıt", callback_data='skor_')
+            geri_don_btn = types.InlineKeyboardButton(text="🔙 Geri", callback_data='skor_')
             keyboard.add(callback_button2, callback_button1)
             keyboard.add(callback_button3)
             keyboard.add(geri_don_btn)
@@ -1391,7 +1391,7 @@ async def skor_master(cagri):
         elif ne_skoru == "kelimeoyunu":
             callback_button1 = types.InlineKeyboardButton(text="Qlobal xal 🌐", callback_data="skor_kelimeoyunu_kureselskor")
             callback_button3 = types.InlineKeyboardButton(text="Mənim xalım 📥", callback_data="skor_kelimeoyunu_skor")
-            geri_don_btn = types.InlineKeyboardButton(text="🔙 Geri qayıt", callback_data='skor_')
+            geri_don_btn = types.InlineKeyboardButton(text="🔙 Geri", callback_data='skor_')
             keyboard.add(callback_button1, callback_button3)
             keyboard.add(geri_don_btn)
 
@@ -1406,7 +1406,7 @@ async def skor_master(cagri):
                 skorlar = f(f"groups.{chat_id}.bilme-sayıları")
 
                 callback_button1 = types.InlineKeyboardButton(text="❌ Sil", callback_data='sil')
-                callback_button3 = types.InlineKeyboardButton(text="🔙 Geri qayıt", callback_data=f'skor_{ne_skoru}')
+                callback_button3 = types.InlineKeyboardButton(text="🔙 Geri", callback_data=f'skor_{ne_skoru}')
                 keyboard.add(callback_button1, callback_button3)
 
                 if skorlar!=[] and "dict" in str(type(skorlar)):
@@ -1460,24 +1460,24 @@ async def skor_master(cagri):
 
                 txt = f'''📈 Oyunçu xalı {first_name}
 
-Bu grupda
+Bu qrupda
 Aparıcı olub: \t{sunucu_sayisi}
 Uğurla təqdim edildi: \t{anlatmis}
 Tapdığı cavablar: \t{bilme}
 
-Bütün gruplarda
+Bütün qruplarda
 Aparıcı olub: \t{f(f"privates.{user_id}.sunucu-sayısı")}
 Uğurla təqdim edildi: \t{f(f"privates.{user_id}.anlatma-sayısı")}
 Tapdığı cavablar: \t{f(f"privates.{user_id}.bilme-sayısı")}
             '''
 
                 callback_button1 = types.InlineKeyboardButton(text="❌ Sil", callback_data='sil')
-                callback_button3 = types.InlineKeyboardButton(text="🔙 Geri qayıt", callback_data=f'skor_{ne_skoru}')
+                callback_button3 = types.InlineKeyboardButton(text="🔙 Geri", callback_data=f'skor_{ne_skoru}')
                 keyboard.add(callback_button1, callback_button3)
                 await bot.edit_message_text(chat_id=chat_id, message_id=cagri.message.message_id, text=txt, reply_markup=keyboard)
             elif tip == "kureselskor":
                 callback_button1 = types.InlineKeyboardButton(text="❌ Sil", callback_data='sil')
-                callback_button3 = types.InlineKeyboardButton(text="🔙 Geri qayıt", callback_data=f'skor_{ne_skoru}')
+                callback_button3 = types.InlineKeyboardButton(text="🔙 Geri", callback_data=f'skor_{ne_skoru}')
                 keyboard.add(callback_button1, callback_button3)
                 
                 kullanicilar = f(f"privates", output="$array")
@@ -1538,14 +1538,14 @@ Tapdığı cavablar: \t{f(f"privates.{user_id}.bilme-sayısı")}
 
                     txt += "\n"
 
-                txt += f"\n💎 Sən {sira} sırasındasan {first_name}"
+                txt += f"\n💎 Sən {sira} sıradasan {first_name}"
                 #bot.send_message(chat_id, txt, reply_markup=keyboard)
                 await bot.edit_message_text(chat_id=chat_id, message_id=cagri.message.message_id, text=txt, reply_markup=keyboard)
             elif tip == "haftalikgrup":
                 skorlar = f(f"groups.{chat_id}.haftalık-bilme-sayıları")
 
                 callback_button1 = types.InlineKeyboardButton(text="❌ Sil", callback_data='sil')
-                callback_button3 = types.InlineKeyboardButton(text="🔙 Geri qayıt", callback_data=f'skor_{ne_skoru}')
+                callback_button3 = types.InlineKeyboardButton(text="🔙 Geri", callback_data=f'skor_{ne_skoru}')
                 keyboard.add(callback_button1, callback_button3)
 
                 if skorlar!=[] and skorlar != "":
@@ -1579,7 +1579,7 @@ Tapdığı cavablar: \t{f(f"privates.{user_id}.bilme-sayısı")}
                         
                     txt += "\n"
 
-                    txt += f"\n💎 Sən {sira} sırasındasan {first_name}"
+                    txt += f"\n💎 Sən {sira} sıradasan {first_name}"
                     await bot.edit_message_text(chat_id=chat_id, message_id=cagri.message.message_id, text=txt, reply_markup=keyboard)
                 else:
                     await bot.edit_message_text(chat_id=chat_id, message_id=cagri.message.message_id, text="Hələ heç bir xal yoxdur.", reply_markup=keyboard)
@@ -1600,7 +1600,7 @@ Tapdığı cavablar: \t{f(f"privates.{user_id}.bilme-sayısı")}
                         del ww[i]
 
                 callback_button1 = types.InlineKeyboardButton(text="❌ Sil", callback_data='sil')
-                callback_button3 = types.InlineKeyboardButton(text="🔙 Geri qayıt", callback_data=f'skor_{ne_skoru}')
+                callback_button3 = types.InlineKeyboardButton(text="🔙 Geri", callback_data=f'skor_{ne_skoru}')
                 keyboard.add(callback_button1, callback_button3)
                 if skorlar!=[]:
                     txt = "Qlobal həftənin ən yaxşı oyunçuları 📜\n\n"
@@ -1656,7 +1656,7 @@ Tapdığı cavablar: \t{f(f"privates.{user_id}.bilme-sayısı")}
                         del ww[i]
 
                 callback_button1 = types.InlineKeyboardButton(text="❌ Sil", callback_data='sil')
-                callback_button3 = types.InlineKeyboardButton(text="🔙 Geri qayıt", callback_data=f'skor_{ne_skoru}')
+                callback_button3 = types.InlineKeyboardButton(text="🔙 Geri", callback_data=f'skor_{ne_skoru}')
                 keyboard.add(callback_button1, callback_button3)
                 if skorlar!=[]:
                     txt = "Qlobal həftənin ən yaxşı qrupları 📜\n\n"
@@ -1725,7 +1725,7 @@ Tapdığı cavablar: \t{f(f"privates.{user_id}.bilme-sayısı")}
                 skorlar_list = skorlar_list[:max_skor]
 
                 #txt = "En iyi max_skor Grup 📜\n\n" + "\n".join([f"<b>{n+1}</b>. {f(f'groups.{i[0]}.username')} - {i[1]} cevap" for n,i in enumerate(skorlar_list)])
-                txt = f"Ən yaxşı {max_skor} Grup 📜\n\n"
+                txt = f"Ən yaxşı {max_skor} Qrup 📜\n\n"
                 
                 for n,i in enumerate(skorlar_list):
                     first_name = f(f'groups.{i[0]}.first_name')
@@ -1747,17 +1747,17 @@ Tapdığı cavablar: \t{f(f"privates.{user_id}.bilme-sayısı")}
                         txt += f"<b>{n+1}</b>. {username} - <code>{i[1]}</code> cavab"
 
                     txt += "\n"
-                txt += f"\n💎 Bu grup ise {sira}. sırada bulunuyor."
+                txt += f"\n💎 Bu qrup {sira} sıradadır."
 
                 callback_button1 = types.InlineKeyboardButton(text="❌ Sil", callback_data='sil')
-                callback_button3 = types.InlineKeyboardButton(text="🔙 Geri qayıt", callback_data=f'skor_{ne_skoru}')
+                callback_button3 = types.InlineKeyboardButton(text="🔙 Geri", callback_data=f'skor_{ne_skoru}')
                 keyboard.add(callback_button1, callback_button3)
                 await bot.edit_message_text(chat_id=chat_id, message_id=cagri.message.message_id, text=txt, reply_markup=keyboard)
         
         elif ne_skoru == "kelimeoyunu":          
             if tip == "kureselskor":
                 callback_button1 = types.InlineKeyboardButton(text="❌ Sil", callback_data='sil')
-                callback_button3 = types.InlineKeyboardButton(text="🔙 Geri qayıt", callback_data=f'skor_{ne_skoru}')
+                callback_button3 = types.InlineKeyboardButton(text="🔙 Geri", callback_data=f'skor_{ne_skoru}')
                 keyboard.add(callback_button1, callback_button3)
                 
                 kullanicilar = f(f"privates", output="$array")
@@ -1819,14 +1819,14 @@ Tapdığı cavablar: \t{f(f"privates.{user_id}.bilme-sayısı")}
 
                     txt += "\n"
 
-                txt += f"\n💎 Sen ise {sira}. sıradasın değerli {first_name}"
+                txt += f"\n💎 Sən {sira} sıradasan {first_name}"
                 #bot.send_message(chat_id, txt, reply_markup=keyboard)
                 await bot.edit_message_text(chat_id=chat_id, message_id=cagri.message.message_id, text=txt, reply_markup=keyboard)
             elif tip == "skor":
                 skorlar = f(f"groups.{chat_id}.kelime-turet-bilme")
 
                 callback_button1 = types.InlineKeyboardButton(text="❌ Sil", callback_data='sil')
-                callback_button3 = types.InlineKeyboardButton(text="🔙 Geri qayıt", callback_data=f'skor_{ne_skoru}')
+                callback_button3 = types.InlineKeyboardButton(text="🔙 Geri", callback_data=f'skor_{ne_skoru}')
                 keyboard.add(callback_button1, callback_button3)
 
                 if skorlar!=[] and "dict" in str(type(skorlar)):
@@ -1894,7 +1894,7 @@ Tapdığı cavablar: \t{f(f"privates.{user_id}.bilme-sayısı")}
                 skorlar_list = skorlar_list[:max_skor]
 
                 #txt = "En iyi max_skor Grup 📜\n\n" + "\n".join([f"<b>{n+1}</b>. {f(f'groups.{i[0]}.username')} - {i[1]} cevap" for n,i in enumerate(skorlar_list)])
-                txt = f"En iyi {max_skor} Grup 📜\n\n"
+                txt = f"Ən yaxşı {max_skor} Qrup 📜\n\n"
                 
                 for n,i in enumerate(skorlar_list):
                     first_name = f(f'groups.{i[0]}.first_name')
@@ -1917,10 +1917,10 @@ Tapdığı cavablar: \t{f(f"privates.{user_id}.bilme-sayısı")}
 
                     txt += "\n"
                 
-                txt += f"\n💎 Bu qrup isə {sira}. növbədədir."
+                txt += f"\n💎 Bu qrup isə {sira} sıradadır."
 
                 callback_button1 = types.InlineKeyboardButton(text="❌ Sil", callback_data='sil')
-                callback_button3 = types.InlineKeyboardButton(text="🔙 Geri qayıt", callback_data=f'skor_{ne_skoru}')
+                callback_button3 = types.InlineKeyboardButton(text="🔙 Geri", callback_data=f'skor_{ne_skoru}')
                 keyboard.add(callback_button1, callback_button3)
                 await bot.edit_message_text(chat_id=chat_id, message_id=cagri.message.message_id, text=txt, reply_markup=keyboard)
 
@@ -2038,7 +2038,7 @@ async def callback_inline(cagri): #çağrıcı cagrici
                 callback_button2 = types.InlineKeyboardButton(text="💣 Çətin (x4 puan)", callback_data=zor_callback)
                 keyboard.add(callback_button1, callback_button2)
                 #bot.send_message(chat_id, f'🎯 <a href="tg://user?id={user_id}">{first_name}</a>, {ayir[1]} round oyunun zorluğu ne olsun?', reply_markup=keyboard)                
-                await bot.edit_message_text(f'<a href="tg://user?id={user_id}">{first_name}</a> {ayir[1]} raund seçdi ✅\n Oyunun çətinliyi nə olsun?', chat_id, cagri.message.id, reply_markup=keyboard)
+                await bot.edit_message_text(f'<a href="tg://user?id={user_id}">{first_name}</a> {ayir[1]} raund seçdi.\n🤔 Oyunun çətinliyi nə olsun?', chat_id, cagri.message.id, reply_markup=keyboard)
                 return
             elif len(ayir) == 3:
                 if ayir[1] == "inf":
