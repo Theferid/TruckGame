@@ -2301,7 +2301,7 @@ async def callback_inline(cagri): #çağrıcı cagrici
             if sorgu == "kelime_bak":
                 #def yap():
                 kelime = f(f"games.{oyun_id}.kelime")
-                txt = "📖 Problem: "+kelime + "\n\n"
+                txt = +kelime + "\n\n"
 
                 sozluk =  f(f"games.{oyun_id}.sozluk")
 
@@ -2333,7 +2333,7 @@ async def callback_inline(cagri): #çağrıcı cagrici
                 #def yap():
                 yeni_kelime = random_from_table()["kelime"].replace("'", "")
 
-                txt = "✨ Yeni sorun: "+yeni_kelime + "\n\n"
+                txt = +yeni_kelime + "\n\n"
 
                     #try:
                     #    getir = tdk.gts.search(yeni_kelime)[0].meanings
