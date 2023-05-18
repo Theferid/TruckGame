@@ -2075,7 +2075,7 @@ async def callback_inline(cagri): #çağrıcı cagrici
         #ipucu_kelime
         oyun = oyun_var_mi(chat_id)
         if oyun_var_mi(chat_id) == False:
-            await bot.answer_callback_query(cagri.id, f'❌ Hörmətli {first_name}, hazırda aktiv oyun yoxdur.', show_alert=False)
+            await bot.answer_callback_query(cagri.id, f'Hörmətli {first_name} hazırda aktiv oyun yoxdur.', show_alert=False)
             return
 
         oyun_id = oyun[0]
@@ -2095,7 +2095,7 @@ async def callback_inline(cagri): #çağrıcı cagrici
             except:
                 pass
             if anlamlar == "":
-                anlamlar = "❌ təəssüf ki, yox."
+                anlamlar = "❌ Təssüf ki, yox."
             else:                
                 anlamlar = ireplace(kelime, '❓', anlamlar).strip()
 
@@ -2159,7 +2159,7 @@ async def callback_inline(cagri): #çağrıcı cagrici
 
                 oyunu_iptal_et(oyun_id)
                 #bot.send_message(chat_id,f'❌ <a href="tg://user?id={user_id}">{first_name}</a> kelimeyi pas geçti! Doğru cevap → <b>{kelime}</b> idi.')
-                await kelime_turet_baslat(cagri.message, toplam_round = toplam_round, round = round, skorlar = skorlar, zorluk = zorluk, header = f'❌ <a href="tg://user?id={user_id}">{first_name}</a> söz keçdi! Düzgün cavab → <b>{kelime}</b> idi.\n')
+                await kelime_turet_baslat(cagri.message, toplam_round = toplam_round, round = round, skorlar = skorlar, zorluk = zorluk, header = f'❌ <a href="tg://user?id={user_id}">{first_name}</a> söz keçdi!\nDüzgün cavab → <b>{kelime}</b> idi.\n')
                 #t = threading.Thread(target = kelime_turet_baslat, kwargs = {
                 #    "message" : cagri.message, 
                 #    "toplam_round" : toplam_round, 
@@ -2350,13 +2350,13 @@ async def callback_inline(cagri): #çağrıcı cagrici
             elif sorgu == "istemiyorum":
                 gecen = int(time.time() - oyun_id/zaman_hassasiyeti)
                 if gecen < 3:
-                    await bot.answer_callback_query(cagri.id, f"📜 Aparıcılıqdan imtina etmek üçün 3 saniyə keçməlidir: {gecen}", show_alert=True)
+                    await bot.answer_callback_query(cagri.id, f"📜 Aparıcılıqdan imtina etmək üçün 3 saniyə keçməlidir: {gecen}", show_alert=True)
                     return
                 
                 oyun_tipi = f(f"games.{oyun_id}.oyun_tipi")
 
                 keyboard = types.InlineKeyboardMarkup()
-                callback_button = types.InlineKeyboardButton(text="Aparıcı olmaq istəyirəm! 📢", callback_data="istiyorum_"+oyun_tipi)
+                callback_button = types.InlineKeyboardButton(text="🗣️ Aparıcı olmaq istəyirəm!", callback_data="istiyorum_"+oyun_tipi)
                 keyboard.add(callback_button)
                 kelime = f(f"games.{oyun_id}.kelime")
                 await bot.send_message(chat_id, f'🔴 <a href="tg://user?id={user_id}">{first_name}</a> Aparıcı olmaq istəmir!\n→ {kelime}', reply_markup=keyboard)
@@ -2369,7 +2369,7 @@ async def callback_inline(cagri): #çağrıcı cagrici
         #    bot.answer_callback_query(cagri.id, f'❓ Şu anda aktif bir oyun yok. Başlatmak için lütfen /game yazınız.', show_alert=True)
         else:
             acan_user = f(f"games.{oyun_id}.açan_user")
-            await bot.answer_callback_query(cagri.id, f'❌ Sən izah etmirsən, {acan_user} izah edir..!', show_alert=False)
+            await bot.answer_callback_query(cagri.id, f'❌ Sən izah etmirsən.\n{acan_user} izah edir..!', show_alert=False)
 
 
     #else:
@@ -2453,7 +2453,7 @@ async def iptal(message):
 
                 metin = f"""❗️ Oyun dayandırıldı
 
-qaliblər 👑
+Qaliblər 👑
 """
                 for n, i in enumerate(skorlar_list):
                     if n + 1 == 1:
@@ -2623,13 +2623,13 @@ async def messages(mesaj):
 
                 try:
                     await bot.send_message(chat_id,f"""
-<b>User id:</b> <code>{mesaj.reply_to_message.from_user.id}</code>
-<b>Chat id:</b> <code>{chat_id}</code>
-<b>Message id:</b> <code>{mesaj.reply_to_message.id}</code>
+<b>İstifadəçi ID:</b> <code>{mesaj.reply_to_message.from_user.id}</code>
+<b>Qrup ID:</b> <code>{chat_id}</code>
+<b>Mesaj ID:</b> <code>{mesaj.reply_to_message.id}</code>
                     """, reply_to_message_id=mesaj.id, reply_markup=keyboard)
                 except:
                     await bot.send_message(chat_id,f"""
-<b>Chat id:</b> <code>{chat_id}</code>
+<b>Qrup ID:</b> <code>{chat_id}</code>
                     """, reply_to_message_id=mesaj.id, reply_markup=keyboard)
         except Exception as e:
             await bot.send_message(chat_id,str(e))
@@ -2759,7 +2759,7 @@ async def messages(mesaj):
 <a href="tg://user?id={user_id}"><b>{first_name}</b></a> düz başa düşdü və sözü izah edir 🗣️''', mod = mod)
                 elif mod == "normal":
                     keyboard = types.InlineKeyboardMarkup()
-                    callback_button = types.InlineKeyboardButton(text="🗣️ Aparıcı olmaq istəyirəm.", callback_data=f'istiyorum_sessiz_sinema_{mod}_{user_id}')
+                    callback_button = types.InlineKeyboardButton(text="🗣️ Aparıcı olmaq istəyirəm!", callback_data=f'istiyorum_sessiz_sinema_{mod}_{user_id}')
                     keyboard.add(callback_button)
                     await bot.send_message(chat_id,f'''doğru bildi → <b>{kelime}</b> ✅
 
@@ -2812,7 +2812,7 @@ async def messages(mesaj):
                     oyunu_iptal_et(oyun_id)
 
                     keyboard = types.InlineKeyboardMarkup()
-                    callback_button = types.InlineKeyboardButton(text="🗣️ Mən aparıcı olmaq istəyirəm", callback_data=f'istiyorum_sessiz_sinema_{mod}')
+                    callback_button = types.InlineKeyboardButton(text="🗣️ Mən aparıcı olmaq istəyirəm!", callback_data=f'istiyorum_sessiz_sinema_{mod}')
                     keyboard.add(callback_button)
                     await bot.send_message(chat_id,f'''{acan_user} düzgün cavabı əldən verdi → <b>{kelime}</b> ✅''', reply_markup=keyboard, reply_to_message_id=mesaj.message_id)
                 else:
