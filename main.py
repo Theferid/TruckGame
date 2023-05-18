@@ -1198,7 +1198,7 @@ async def cesaret(message):
     callback_button2 = types.InlineKeyboardButton(text="🌟 Cəsarət", callback_data="dogrulukcesaret_c")
     keyboard.add(callback_button1, callback_button2)
     
-    yazi = f"<a href='tg://user?id={user_id}'>{first_name}</a>, <b>cəsarəti</b> seçdi\n\n"
+    yazi = f"<a href='tg://user?id={user_id}'>{first_name}</a> <b>cəsarəti</b> seçdi\n\n"
 
     getir = sql_get(f"SELECT * FROM dogruluk_cesaret WHERE tur LIKE 'c' ORDER BY RANDOM() LIMIT 1;")
     yazi = yazi + getir["yazi"]
@@ -1230,7 +1230,7 @@ async def dogruluk(message):
     callback_button2 = types.InlineKeyboardButton(text="🥳 Cəsarət ", callback_data="dogrulukcesaret_c")
     keyboard.add(callback_button1, callback_button2)
     
-    yazi = f"<a href='tg://user?id={user_id}'>{first_name}</a>, <b>doğruluğu</b> seçdi\n\n"
+    yazi = f"<a href='tg://user?id={user_id}'>{first_name}</a> <b>doğruluğu</b> seçdi\n\n"
 
     getir = sql_get(f"SELECT * FROM dogruluk_cesaret WHERE tur LIKE 'd' ORDER BY RANDOM() LIMIT 1;")
     yazi = yazi + getir["yazi"]
