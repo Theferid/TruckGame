@@ -1302,7 +1302,7 @@ async def baslat(message):
 
     keyboard = types.InlineKeyboardMarkup()
     callback_button1 = types.InlineKeyboardButton(text="✍️ Söz oyunu", callback_data="sessiz_sinema")
-    callback_button2 = types.InlineKeyboardButton(text="🔠 Boş xana", callback_data="kelimeoyunu")
+    callback_button2 = types.InlineKeyboardButton(text="🧩 Boş xana", callback_data="kelimeoyunu")
     callback_button3 = types.InlineKeyboardButton(text="🔮 Doğruluq yoxsa Cəsarət", callback_data="dogrulukcesaret")
     keyboard.add(callback_button1)
     keyboard.add(callback_button2)
