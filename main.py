@@ -832,7 +832,7 @@ async def kelime_turet_baslat(message, **kwargs):
         return
 
     keyboard = types.InlineKeyboardMarkup()
-    callback_button1 = types.InlineKeyboardButton(text="Keçmək 🚫", callback_data="pas_gec")
+    callback_button1 = types.InlineKeyboardButton(text="Növbətiyə keç 🧩", callback_data="pas_gec")
     callback_button2 = types.InlineKeyboardButton(text="İpucu 🔎", callback_data="ipucu_kelime")
     #callback_button3 = types.InlineKeyboardButton(text="Harf istiyorum 🌟", callback_data="kelimeturet_harf")
 
@@ -1199,7 +1199,7 @@ async def cesaret(message):
     callback_button2 = types.InlineKeyboardButton(text="🌟 Cəsarət", callback_data="dogrulukcesaret_c")
     keyboard.add(callback_button1, callback_button2)
     
-    yazi = f"<a href='tg://user?id={user_id}'>{first_name}</a>, <b>cəsarəti</b> seçdi!\n\n"
+    yazi = f"<a href='tg://user?id={user_id}'>{first_name}</a>, <b>cəsarəti</b> seçdi\n\n"
 
     getir = sql_get(f"SELECT * FROM dogruluk_cesaret WHERE tur LIKE 'c' ORDER BY RANDOM() LIMIT 1;")
     yazi = yazi + getir["yazi"]
@@ -1227,11 +1227,11 @@ async def dogruluk(message):
     user_id = message.from_user.id #sabit    
     
     keyboard = types.InlineKeyboardMarkup()
-    callback_button1 = types.InlineKeyboardButton(text="🎯 Doğruluk ", callback_data="dogrulukcesaret_d")
-    callback_button2 = types.InlineKeyboardButton(text="🌟 Cəsarət ", callback_data="dogrulukcesaret_c")
+    callback_button1 = types.InlineKeyboardButton(text="🙂 Doğruluq", callback_data="dogrulukcesaret_d")
+    callback_button2 = types.InlineKeyboardButton(text="🥳 Cəsarət ", callback_data="dogrulukcesaret_c")
     keyboard.add(callback_button1, callback_button2)
     
-    yazi = f"<a href='tg://user?id={user_id}'>{first_name}</a>, <b>doğruluğu</b> seçdi!\n\n"
+    yazi = f"<a href='tg://user?id={user_id}'>{first_name}</a>, <b>doğruluğu</b> seçdi\n\n"
 
     getir = sql_get(f"SELECT * FROM dogruluk_cesaret WHERE tur LIKE 'd' ORDER BY RANDOM() LIMIT 1;")
     yazi = yazi + getir["yazi"]
@@ -1303,7 +1303,7 @@ async def baslat(message):
     keyboard = types.InlineKeyboardMarkup()
     callback_button1 = types.InlineKeyboardButton(text="✍️ Söz oyunu", callback_data="sessiz_sinema")
     callback_button2 = types.InlineKeyboardButton(text="🔠 Boş xana", callback_data="kelimeoyunu")
-    callback_button3 = types.InlineKeyboardButton(text="🔮 Doğruluğ yoxsa cəsarət", callback_data="dogrulukcesaret")
+    callback_button3 = types.InlineKeyboardButton(text="🔮 Doğruluq yoxsa Cəsarət", callback_data="dogrulukcesaret")
     keyboard.add(callback_button1)
     keyboard.add(callback_button2)
     keyboard.add(callback_button3)
@@ -2039,7 +2039,7 @@ async def callback_inline(cagri): #çağrıcı cagrici
                 callback_button2 = types.InlineKeyboardButton(text="💣 Çətin (x4 puan)", callback_data=zor_callback)
                 keyboard.add(callback_button1, callback_button2)
                 #bot.send_message(chat_id, f'🎯 <a href="tg://user?id={user_id}">{first_name}</a>, {ayir[1]} round oyunun zorluğu ne olsun?', reply_markup=keyboard)                
-                await bot.edit_message_text(f'🎯 <a href="tg://user?id={user_id}">{first_name}</a>, {ayir[1]} round oyunun çətinliyi nə olsun?', chat_id, cagri.message.id, reply_markup=keyboard)
+                await bot.edit_message_text(f'🎯 <a href="tg://user?id={user_id}">{first_name}</a> {ayir[1]} round oyunun çətinliyi neçə olsun?', chat_id, cagri.message.id, reply_markup=keyboard)
                 return
             elif len(ayir) == 3:
                 if ayir[1] == "inf":
@@ -2247,8 +2247,8 @@ async def callback_inline(cagri): #çağrıcı cagrici
             return
         
         keyboard = types.InlineKeyboardMarkup()
-        callback_button1 = types.InlineKeyboardButton(text="🎯 Doğruluğ", callback_data="dogrulukcesaret_d")
-        callback_button2 = types.InlineKeyboardButton(text="🌟 Cəsarət", callback_data="dogrulukcesaret_c")
+        callback_button1 = types.InlineKeyboardButton(text="🙂 Doğruluq", callback_data="dogrulukcesaret_d")
+        callback_button2 = types.InlineKeyboardButton(text="🥳 Cəsarət", callback_data="dogrulukcesaret_c")
         keyboard.add(callback_button1, callback_button2)
         
 
@@ -2269,7 +2269,7 @@ async def callback_inline(cagri): #çağrıcı cagrici
             elif ayir == "c":
                 tip = "cesareti"
             
-            yazi = f"<a href='tg://user?id={user_id}'>{first_name}</a>, <b>{tip}</b> seçdi!\n\n"
+            yazi = f"<a href='tg://user?id={user_id}'>{first_name}</a>, <b>{tip}</b> seçdi\n\n"
 
             getir = sql_get(f"SELECT * FROM dogruluk_cesaret WHERE tur LIKE '{ayir}' ORDER BY RANDOM() LIMIT 1;")
             yazi = yazi + getir["yazi"]
