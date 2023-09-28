@@ -46,13 +46,13 @@ bot_adi = "Rahid_Word_Bot"
 if hex(getnode()) in ["0xdc7b23bb434e"]: #windows masaüstü pc ise veya laptop
     #kaç yaşındasın bot
     print("kyb")
-    bot_adi = "Rahid_Word_Bot"
-    bot_token = "5588071470:AAFFth8K76ZLeZ61wKH96x1Rc-SDNEXhHi8"
+    bot_adi = "WordAzBot"
+    bot_token = "6600402950:AAGa07xfWSrBfk7koosFE5iAd4CvKiC_DLk"
     bot = AsyncTeleBot(bot_token, parse_mode="html")
 else:
     #sıl octopus bot
-    bot_adi = "Rahid_Word_Bot"
-    bot_token = "5588071470:AAFFth8K76ZLeZ61wKH96x1Rc-SDNEXhHi8"
+    bot_adi = "WordAzBot"
+    bot_token = "6600402950:AAGa07xfWSrBfk7koosFE5iAd4CvKiC_DLk"
     bot = AsyncTeleBot(bot_token, parse_mode="html")
 
 temp = {}
@@ -569,8 +569,8 @@ async def start_private(message): #, **kwargs
             f(f"privates.{user_id}.start",True)
             keyboard = types.InlineKeyboardMarkup()
 
-            callback_button = types.InlineKeyboardButton(text="✘ Məni qrupa əlavə et ✘", url="https://t.me/Rahid_Word_Bot?startgroup=a")
-            callback_button2 = types.InlineKeyboardButton(text="✅ Rəsmi Kanal", url="https://t.me/qruzdaa")
+            callback_button = types.InlineKeyboardButton(text="✘ Qrupa Əlavə Et ✘", url="https://t.me/WordAzBot?startgroup=a")
+            callback_button2 = types.InlineKeyboardButton(text="✅ Rəsmi Kanal", url="https://t.me/qruzda")
             keyboard.add(callback_button)
             keyboard.add(callback_button2)
             await bot.send_message(chat_id, f'<b>✋🏻 Salam, mən oyun botuyam.\n\n🎯 Müxtəlif oyunlar oynamaq və əylənmək üçün mənimlə oynaya bilərsiniz.\n\n⚙️ Məni qrupa əlavə edin və mənimlə oynamaq üçün məni qrupda Admin et.</b >',  reply_markup=keyboard)
