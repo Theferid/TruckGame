@@ -41,7 +41,7 @@ import requests
 #warnings.filterwarnings("ignore")
 
 
-bot_adi = "Rahid_Word_Bot"
+bot_adi = "WordAzBot"
 
 if hex(getnode()) in ["0xdc7b23bb434e"]: #windows masaüstü pc ise veya laptop
     #kaç yaşındasın bot
@@ -570,7 +570,7 @@ async def start_private(message): #, **kwargs
             keyboard = types.InlineKeyboardMarkup()
 
             callback_button = types.InlineKeyboardButton(text="✘ Qrupa Əlavə Et ✘", url="https://t.me/WordAzBot?startgroup=a")
-            callback_button2 = types.InlineKeyboardButton(text="✅ Rəsmi Kanal", url="https://t.me/qruzda")
+            callback_button2 = types.InlineKeyboardButton(text="✅ Rəsmi Kanal", url="https://t.me/BotlarAz")
             keyboard.add(callback_button)
             keyboard.add(callback_button2)
             await bot.send_message(chat_id, f'<b>✋🏻 Salam, mən oyun botuyam.\n\n🎯 Müxtəlif oyunlar oynamaq və əylənmək üçün mənimlə oynaya bilərsiniz.\n\n⚙️ Məni qrupa əlavə edin və mənimlə oynamaq üçün məni qrupda Admin et.</b >',  reply_markup=keyboard)
