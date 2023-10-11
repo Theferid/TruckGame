@@ -41,18 +41,18 @@ import requests
 #warnings.filterwarnings("ignore")
 
 
-bot_adi = "WordAzBot"
+bot_adi = "Rahid_Word_Bot"
 
 if hex(getnode()) in ["0xdc7b23bb434e"]: #windows masaüstü pc ise veya laptop
     #kaç yaşındasın bot
     print("kyb")
-    bot_adi = "WordAzBot"
-    bot_token = "6600402950:AAGa07xfWSrBfk7koosFE5iAd4CvKiC_DLk"
+    bot_adi = "Rahid_Word_Bot"
+    bot_token = "5588071470:AAFFth8K76ZLeZ61wKH96x1Rc-SDNEXhHi8"
     bot = AsyncTeleBot(bot_token, parse_mode="html")
 else:
     #sıl octopus bot
-    bot_adi = "WordAzBot"
-    bot_token = "6600402950:AAGa07xfWSrBfk7koosFE5iAd4CvKiC_DLk"
+    bot_adi = "Rahid_Word_Bot"
+    bot_token = "5588071470:AAFFth8K76ZLeZ61wKH96x1Rc-SDNEXhHi8"
     bot = AsyncTeleBot(bot_token, parse_mode="html")
 
 temp = {}
@@ -482,9 +482,9 @@ def draw_graph(x,y, **kwargs):
         plt.scatter(x, y, marker='x', color='red')
     plt.savefig('base.jpg', format='jpg')
 
-    if (kwargs.get("chat_id", "-1001558578917")!="-1001613340352"):
+    if (kwargs.get("chat_id", "-1001864613336")!="-1001613340352"):
         #bot.send_photo(kwargs.get("chat_id", ""), photo=open('base.jpg', 'rb'))
-        bot.send_document(kwargs.get("chat_id", "-1001558578917"), document=open('base.jpg', 'rb'))
+        bot.send_document(kwargs.get("chat_id", "-1001864613336"), document=open('base.jpg', 'rb'))
         os.remove("base.jpg")
 
 def skor_arttir(neyi,artis=1, **kwargs):
@@ -499,7 +499,7 @@ def skor_arttir(neyi,artis=1, **kwargs):
         return skor_getir
 
 async def log_gonder(**kwargs):
-    chat_id = kwargs.get('chat_id','-1001558578917')
+    chat_id = kwargs.get('chat_id','-1001864613336')
 
     #grup_link = ""
     #try:    
@@ -569,7 +569,7 @@ async def start_private(message): #, **kwargs
             f(f"privates.{user_id}.start",True)
             keyboard = types.InlineKeyboardMarkup()
 
-            callback_button = types.InlineKeyboardButton(text="✘ Qrupa Əlavə Et ✘", url="https://t.me/WordAzBot?startgroup=a")
+            callback_button = types.InlineKeyboardButton(text="✘ Qrupa Əlavə Et ✘", url="https://t.me/Rahid_Word_Bot?startgroup=a")
             callback_button2 = types.InlineKeyboardButton(text="✅ Rəsmi Kanal", url="https://t.me/BotlarAz")
             keyboard.add(callback_button)
             keyboard.add(callback_button2)
@@ -1282,7 +1282,7 @@ async def baslat(message):
         await bot.send_message(message.chat.id, "Bu əmr yalnız qrup üçün istifadə edilə bilər.")
         return
     if konumlar != False:
-        await bot.send_message(message.chat.id, "🎯 Oyun artıq başlayıb.\nDayandırmaq /stop")
+        await bot.send_message(message.chat.id, "🎯 Oyun artıq başlayıb.\nDayandırmaq üçün /stop")
         return
 
     first_name = None
