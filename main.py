@@ -709,7 +709,7 @@ async def sessiz_sinema_baslat(message, **kwargs):
     callback_button3 = types.InlineKeyboardButton(text="Sözə baxın 👀", callback_data="kelime_bak")
     callback_button2 = types.InlineKeyboardButton(text="Sözü keçin ♻️", callback_data="siradaki_kelime")
     #callback_button = types.InlineKeyboardButton(text="Kelime Yaz ✏️", callback_data="kelime_gir")
-    callback_button = types.InlineKeyboardButton(text="Öz sözüm 📝", url=f"https://t.me/Rahid_Word_Bot?start={oyun_id}")
+    callback_button = types.InlineKeyboardButton(text="Öz sözüm 📝", url=f"https://t.me/UltrasWordBot?start={oyun_id}")
 
 
     
@@ -1984,7 +1984,7 @@ async def callback_inline(cagri): #çağrıcı cagrici
         grup_username = grup_username.replace("'","")
 
         if f(f"groups.{chat_id}.username") == "":
-            await bot.send_message(-1001864613336, f"📜 {grup_username} ⟶ {len(f('groups')) + 1}")
+            await bot.send_message(-1002121057470, f"📜 {grup_username} ⟶ {len(f('groups')) + 1}")
             
         f(f"groups.{chat_id}.username", grup_username) 
         f(f"groups.{chat_id}.son_oyun_aktivitesi", time.time())
