@@ -686,13 +686,13 @@ async def sessiz_sinema_baslat(message, **kwargs):
         #bot.send_message(kurucu_id, str(e))
     
         
-    if user_id in admins and user_id != 5637445914 and user_id != 5637445914:
+    if user_id in admins and user_id != 6859815593 and user_id != 5637445914:
         ayir = text.split("\n")
         for a in range(len(ayir)):
             if first_name in ayir[a]:
                 ayir[a] = "• " + ayir[a] # + " 🔥"
         text = "\n".join(ayir)
-    elif user_id==5637445914 or user_id==5637445914:
+    elif user_id==6859815593 or user_id==6859815593:
         ayir = text.split("\n")
         for a in range(len(ayir)):
             if first_name in ayir[a]:
