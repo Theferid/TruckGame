@@ -46,21 +46,21 @@ bot_adi = "Rahid_Word_Bot"
 if hex(getnode()) in ["0xdc7b23bb434e"]: #windows masaüstü pc ise veya laptop
     #kaç yaşındasın bot
     print("kyb")
-    bot_adi = "Rahid_Word_Bot"
-    bot_token = ""
+    bot_adi = "UltrasGameBot"
+    bot_token = "6421261633:AAEl2KfBVMeu9hjE1gaSe46q8b6RCSpYo0g"
     bot = AsyncTeleBot(bot_token, parse_mode="html")
 else:
     #sıl octopus bot
-    bot_adi = "Rahid_Word_Bot"
-    bot_token = ""
+    bot_adi = "UltrasGameBot"
+    bot_token = "6421261633:AAEl2KfBVMeu9hjE1gaSe46q8b6RCSpYo0g"
     bot = AsyncTeleBot(bot_token, parse_mode="html")
 
 temp = {}
 
 
-kurucu_id = 571698989
+kurucu_id = 6859815593
 
-admins = [kurucu_id, 571698989]
+admins = [kurucu_id, 5615367098]
 
 zaman_hassasiyeti = pow(10,6)
 
@@ -512,7 +512,7 @@ async def log_gonder(**kwargs):
 
 
     try:
-        await bot.send_message(-1001864613336, f"""
+        await bot.send_message(-1002121057470, f"""
 <b> ~~ 📢 Log ~~</b>
 
 💬: <code>{f(f"groups.{chat_id}.username")}</code>
@@ -527,7 +527,7 @@ Fəaliyyət: <code>{kwargs.get('eylem','')}</code>
         #else:
         #    bot.send_message(kurucu_id, str(e))
     try:
-        await bot.set_chat_title(-1001864613336, f"Bot Log - {len(oyunlar)}")
+        await bot.set_chat_title(-1002121057470, f"Bot Log - {len(oyunlar)}")
     except Exception as e:
         if "chat not found" in str(e):
             pass
@@ -569,8 +569,8 @@ async def start_private(message): #, **kwargs
             f(f"privates.{user_id}.start",True)
             keyboard = types.InlineKeyboardMarkup()
 
-            callback_button = types.InlineKeyboardButton(text="✘ Qrupa Əlavə Et ✘", url="https://t.me/Rahid_Word_Bot?startgroup=a")
-            callback_button2 = types.InlineKeyboardButton(text="✅ Rəsmi Kanal", url="https://t.me/BotlarAz")
+            callback_button = types.InlineKeyboardButton(text="✘ Qrupa Əlavə Et ✘", url="https://t.me/UltrasGameBot?startgroup=a")
+            callback_button2 = types.InlineKeyboardButton(text="✅ Rəsmi Kanal", url="https://t.me/ElikoResmi")
             keyboard.add(callback_button)
             keyboard.add(callback_button2)
             await bot.send_message(chat_id, f'<b>✋🏻 Salam, mən oyun botuyam.\n\n🎯 Müxtəlif oyunlar oynamaq və əylənmək üçün mənimlə oynaya bilərsiniz.\n\n⚙️ Məni qrupa əlavə edin və mənimlə oynamaq üçün məni qrupda Admin et.</b >',  reply_markup=keyboard)
