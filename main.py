@@ -41,18 +41,18 @@ import requests
 #warnings.filterwarnings("ignore")
 
 
-bot_adi = "Rahid_Word_Bot"
+bot_adi = "UltrasWordBot"
 
 if hex(getnode()) in ["0xdc7b23bb434e"]: #windows masaüstü pc ise veya laptop
     #kaç yaşındasın bot
     print("kyb")
-    bot_adi = "UltrasGameBot"
-    bot_token = "6421261633:AAEl2KfBVMeu9hjE1gaSe46q8b6RCSpYo0g"
+    bot_adi = "UltrasWordBot"
+    bot_token = "6825310882:AAEpIsHVwu_Ff3UgV5hWkifS0cuDLPM1VY4"
     bot = AsyncTeleBot(bot_token, parse_mode="html")
 else:
     #sıl octopus bot
-    bot_adi = "UltrasGameBot"
-    bot_token = "6421261633:AAEl2KfBVMeu9hjE1gaSe46q8b6RCSpYo0g"
+    bot_adi = "UltrasWordBot"
+    bot_token = "6825310882:AAEpIsHVwu_Ff3UgV5hWkifS0cuDLPM1VY4"
     bot = AsyncTeleBot(bot_token, parse_mode="html")
 
 temp = {}
