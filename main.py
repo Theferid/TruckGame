@@ -41,26 +41,26 @@ import requests
 #warnings.filterwarnings("ignore")
 
 
-bot_adi = "UltrasWordBot"
+bot_adi = "AzeGameRoBot"
 
 if hex(getnode()) in ["0xdc7b23bb434e"]: #windows masaüstü pc ise veya laptop
     #kaç yaşındasın bot
     print("kyb")
-    bot_adi = "UltrasWordBot"
-    bot_token = "6825310882:AAEpIsHVwu_Ff3UgV5hWkifS0cuDLPM1VY4"
+    bot_adi = "AzeGameRoBot"
+    bot_token = "6842087310:AAFgfzHdRoY6iIEAEMdHdk3_iCQDsUkGNwY"
     bot = AsyncTeleBot(bot_token, parse_mode="html")
 else:
     #sıl octopus bot
-    bot_adi = "UltrasWordBot"
-    bot_token = "6825310882:AAEpIsHVwu_Ff3UgV5hWkifS0cuDLPM1VY4"
+    bot_adi = "AzeGameRoBot"
+    bot_token = "6842087310:AAFgfzHdRoY6iIEAEMdHdk3_iCQDsUkGNwY"
     bot = AsyncTeleBot(bot_token, parse_mode="html")
 
 temp = {}
 
 
-kurucu_id = 6859815593
+kurucu_id = 6714050984
 
-admins = [kurucu_id, 5615367098]
+admins = [kurucu_id, 6714050984]
 
 zaman_hassasiyeti = pow(10,6)
 
@@ -569,8 +569,8 @@ async def start_private(message): #, **kwargs
             f(f"privates.{user_id}.start",True)
             keyboard = types.InlineKeyboardMarkup()
 
-            callback_button = types.InlineKeyboardButton(text="✘ Qrupa Əlavə Et ✘", url="https://t.me/UltrasWordBot?startgroup=a")
-            callback_button2 = types.InlineKeyboardButton(text="✅ Rəsmi Kanal", url="https://t.me/ElikoResmi")
+            callback_button = types.InlineKeyboardButton(text="✘ Qrupa Əlavə Et ✘", url="https://t.me/AzeGameRoBot?startgroup=a")
+            callback_button2 = types.InlineKeyboardButton(text="✅ Rəsmi Kanal", url="https://t.me/SharkResmi")
             keyboard.add(callback_button)
             keyboard.add(callback_button2)
             await bot.send_message(chat_id, f'<b>✋🏻 Salam, mən oyun botuyam.\n\n🎯 Müxtəlif oyunlar oynamaq və əylənmək üçün mənimlə oynaya bilərsiniz.\n\n⚙️ Məni qrupa əlavə edin və mənimlə oynamaq üçün məni qrupda Admin et.</b >',  reply_markup=keyboard)
@@ -709,7 +709,7 @@ async def sessiz_sinema_baslat(message, **kwargs):
     callback_button3 = types.InlineKeyboardButton(text="Sözə baxın 👀", callback_data="kelime_bak")
     callback_button2 = types.InlineKeyboardButton(text="Sözü keçin ♻️", callback_data="siradaki_kelime")
     #callback_button = types.InlineKeyboardButton(text="Kelime Yaz ✏️", callback_data="kelime_gir")
-    callback_button = types.InlineKeyboardButton(text="Öz sözüm 📝", url=f"https://t.me/UltrasWordBot?start={oyun_id}")
+    callback_button = types.InlineKeyboardButton(text="Öz sözüm 📝", url=f"https://t.me/AzeGameRoBot?start={oyun_id}")
 
 
     
