@@ -569,7 +569,7 @@ async def start_private(message): #, **kwargs
             f(f"privates.{user_id}.start",True)
             keyboard = types.InlineKeyboardMarkup()
 
-            callback_button = types.InlineKeyboardButton(text="✘ Qrupa Əlavə Et ✘", url="https://t.me/UltrasGameBot?startgroup=a")
+            callback_button = types.InlineKeyboardButton(text="✘ Qrupa Əlavə Et ✘", url="https://t.me/UltrasWordBot?startgroup=a")
             callback_button2 = types.InlineKeyboardButton(text="✅ Rəsmi Kanal", url="https://t.me/ElikoResmi")
             keyboard.add(callback_button)
             keyboard.add(callback_button2)
