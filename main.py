@@ -41,7 +41,7 @@ import requests
 #warnings.filterwarnings("ignore")
 
 
-bot_adi = "AzeGameRoBot"
+bot_adi = "CrocodileGameAzerbaijan_Bot"
 
 if hex(getnode()) in ["0xdc7b23bb434e"]: #windows masaüstü pc ise veya laptop
     #kaç yaşındasın bot
