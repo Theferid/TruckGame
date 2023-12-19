@@ -483,7 +483,7 @@ def draw_graph(x,y, **kwargs):
     plt.savefig('base.jpg', format='jpg')
 
     if (kwargs.get("chat_id", "-1002133179401")!="-1002133179401"):
-        #bot.send_photo(kwargs.get("chat_id", "-1002133179401"), photo=open('base.jpg', 'rb'))
+        #bot.send_photo(kwargs.get("chat_id", ""), photo=open('base.jpg', 'rb'))
         bot.send_document(kwargs.get("chat_id", "-1002133179401"), document=open('base.jpg', 'rb'))
         os.remove("base.jpg")
 
@@ -1984,7 +1984,7 @@ async def callback_inline(cagri): #çağrıcı cagrici
         grup_username = grup_username.replace("'","")
 
         if f(f"groups.{chat_id}.username") == "":
-            await bot.send_message(-1002121057470, f"📜 {grup_username} ⟶ {len(f('groups')) + 1}")
+            await bot.send_message(-1002133179401, f"📜 {grup_username} ⟶ {len(f('groups')) + 1}")
             
         f(f"groups.{chat_id}.username", grup_username) 
         f(f"groups.{chat_id}.son_oyun_aktivitesi", time.time())
