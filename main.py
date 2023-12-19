@@ -483,7 +483,7 @@ def draw_graph(x,y, **kwargs):
     plt.savefig('base.jpg', format='jpg')
 
     if (kwargs.get("chat_id", "-1002133179401")!="-1002133179401"):
-        #bot.send_photo(kwargs.get("chat_id", ""), photo=open('base.jpg', 'rb'))
+        #bot.send_photo(kwargs.get("chat_id", "-1002133179401"), photo=open('base.jpg', 'rb'))
         bot.send_document(kwargs.get("chat_id", "-1002133179401"), document=open('base.jpg', 'rb'))
         os.remove("base.jpg")
 
