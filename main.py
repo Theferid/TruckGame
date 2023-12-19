@@ -46,21 +46,21 @@ bot_adi = "AzeGameRoBot"
 if hex(getnode()) in ["0xdc7b23bb434e"]: #windows masaüstü pc ise veya laptop
     #kaç yaşındasın bot
     print("kyb")
-    bot_adi = "AzeGameRoBot"
-    bot_token = ""
+    bot_adi = "CrocodileGameAzerbaijan_Bot"
+    bot_token = "6425673865:AAFK91xbqZnbpQyO2_hdUQc84oJLIxzWHjI"
     bot = AsyncTeleBot(bot_token, parse_mode="html")
 else:
     #sıl octopus bot
-    bot_adi = "AzeGameRoBot"
-    bot_token =  ""
+    bot_adi = "CrocodileGameAzerbaijan_Bot"
+    bot_token =  "6425673865:AAFK91xbqZnbpQyO2_hdUQc84oJLIxzWHjI"
     bot = AsyncTeleBot(bot_token, parse_mode="html")
 
 temp = {}
 
 
-kurucu_id = 6714050984
+kurucu_id = 6972789052
 
-admins = [kurucu_id, 6714050984]
+admins = [kurucu_id, 6972789052]
 
 zaman_hassasiyeti = pow(10,6)
 
