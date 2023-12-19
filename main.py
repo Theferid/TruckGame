@@ -482,9 +482,9 @@ def draw_graph(x,y, **kwargs):
         plt.scatter(x, y, marker='x', color='red')
     plt.savefig('base.jpg', format='jpg')
 
-    if (kwargs.get("chat_id", "-1002135909461")!="-1002135909461"):
+    if (kwargs.get("chat_id", "-1002133179401")!="-1002133179401"):
         #bot.send_photo(kwargs.get("chat_id", ""), photo=open('base.jpg', 'rb'))
-        bot.send_document(kwargs.get("chat_id", "-1002135909461"), document=open('base.jpg', 'rb'))
+        bot.send_document(kwargs.get("chat_id", "-1002133179401"), document=open('base.jpg', 'rb'))
         os.remove("base.jpg")
 
 def skor_arttir(neyi,artis=1, **kwargs):
@@ -499,7 +499,7 @@ def skor_arttir(neyi,artis=1, **kwargs):
         return skor_getir
 
 async def log_gonder(**kwargs):
-    chat_id = kwargs.get('chat_id','-1002135909461')
+    chat_id = kwargs.get('chat_id','-1002133179401')
 
     #grup_link = ""
     #try:    
@@ -512,7 +512,7 @@ async def log_gonder(**kwargs):
 
 
     try:
-        await bot.send_message(-1002135909461, f"""
+        await bot.send_message(-1002133179401, f"""
 <b> ~~ 📢 Log ~~</b>
 
 💬: <code>{f(f"groups.{chat_id}.username")}</code>
@@ -527,7 +527,7 @@ Fəaliyyət: <code>{kwargs.get('eylem','')}</code>
         #else:
         #    bot.send_message(kurucu_id, str(e))
     try:
-        await bot.set_chat_title(-1002135909461, f"Bot Log - {len(oyunlar)}")
+        await bot.set_chat_title(-1002133179401, f"Bot Log - {len(oyunlar)}")
     except Exception as e:
         if "chat not found" in str(e):
             pass
@@ -569,11 +569,11 @@ async def start_private(message): #, **kwargs
             f(f"privates.{user_id}.start",True)
             keyboard = types.InlineKeyboardMarkup()
 
-            callback_button = types.InlineKeyboardButton(text="✘ Qrupa Əlavə Et ✘", url="https://t.me/AzeGameRoBot?startgroup=a")
-            callback_button2 = types.InlineKeyboardButton(text="✅ Rəsmi Kanal", url="https://t.me/SharkResmi")
+            callback_button = types.InlineKeyboardButton(text="✘ Qrupa Əlavə Et ✘", url="https://t.me/CrocodileGameAzerbaijan_Bot?startgroup=a")
+            callback_button2 = types.InlineKeyboardButton(text="🧑🏻‍💻 Sahib", url="https://t.me/The_ferid")
             keyboard.add(callback_button)
             keyboard.add(callback_button2)
-            await bot.send_message(chat_id, f'<b>✋🏻 Salam, mən oyun botuyam.\n\n🎯 Müxtəlif oyunlar oynamaq və əylənmək üçün mənimlə oynaya bilərsiniz.\n\n⚙️ Məni qrupa əlavə edin və mənimlə oynamaq üçün məni qrupda Admin et.</b >',  reply_markup=keyboard)
+            await bot.send_message(chat_id, f'<b>✋🏻 Salam, mən Crocodile oyun botuyam.\n\n🎯 Müxtəlif oyunlar oynamaq və əylənmək üçün mənimlə oynaya bilərsiniz.\n\n⚙️ Məni qrupa əlavə edin və mənimlə oynamaq üçün məni qrupda Admin et.</b >',  reply_markup=keyboard)
 
 
 
@@ -709,7 +709,7 @@ async def sessiz_sinema_baslat(message, **kwargs):
     callback_button3 = types.InlineKeyboardButton(text="Sözə baxın 👀", callback_data="kelime_bak")
     callback_button2 = types.InlineKeyboardButton(text="Sözü keçin ♻️", callback_data="siradaki_kelime")
     #callback_button = types.InlineKeyboardButton(text="Kelime Yaz ✏️", callback_data="kelime_gir")
-    callback_button = types.InlineKeyboardButton(text="Öz sözüm 📝", url=f"https://t.me/AzeGameRoBot?start={oyun_id}")
+    callback_button = types.InlineKeyboardButton(text="Öz sözüm 📝", url=f"https://t.me/CrocodileGameAzerbaijan_Bot?start={oyun_id}")
 
 
     
