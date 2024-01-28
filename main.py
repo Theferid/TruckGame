@@ -41,26 +41,26 @@ import requests
 #warnings.filterwarnings("ignore")
 
 
-bot_adi = "CrocodileGameAzerbaijan_Bot"
+bot_adi = "CrocodileeGameBot"
 
 if hex(getnode()) in ["0xdc7b23bb434e"]: #windows masaüstü pc ise veya laptop
     #kaç yaşındasın bot
     print("kyb")
-    bot_adi = "CrocodileGameAzerbaijan_Bot"
-    bot_token = "6425673865:AAFK91xbqZnbpQyO2_hdUQc84oJLIxzWHjI"
+    bot_adi = "CrocodileeGameBot"
+    bot_token = "6853646014:AAGFaoB9rBmHI7w9R9gfpVeCiWSDzxP1Vvc"
     bot = AsyncTeleBot(bot_token, parse_mode="html")
 else:
     #sıl octopus bot
-    bot_adi = "CrocodileGameAzerbaijan_Bot"
-    bot_token =  "6425673865:AAFK91xbqZnbpQyO2_hdUQc84oJLIxzWHjI"
+    bot_adi = "CrocodileeGameBot"
+    bot_token =  "6853646014:AAGFaoB9rBmHI7w9R9gfpVeCiWSDzxP1Vvc"
     bot = AsyncTeleBot(bot_token, parse_mode="html")
 
 temp = {}
 
 
-kurucu_id = 6972789052
+kurucu_id = 6471021703
 
-admins = [kurucu_id, 6972789052]
+admins = [kurucu_id, 6471021703]
 
 zaman_hassasiyeti = pow(10,6)
 
@@ -482,9 +482,9 @@ def draw_graph(x,y, **kwargs):
         plt.scatter(x, y, marker='x', color='red')
     plt.savefig('base.jpg', format='jpg')
 
-    if (kwargs.get("chat_id", "-1002133179401")!="-1002133179401"):
+    if (kwargs.get("chat_id", "-1002063353430")!="-1002063353430"):
         #bot.send_photo(kwargs.get("chat_id", ""), photo=open('base.jpg', 'rb'))
-        bot.send_document(kwargs.get("chat_id", "-1002133179401"), document=open('base.jpg', 'rb'))
+        bot.send_document(kwargs.get("chat_id", "-1002063353430"), document=open('base.jpg', 'rb'))
         os.remove("base.jpg")
 
 def skor_arttir(neyi,artis=1, **kwargs):
@@ -499,7 +499,7 @@ def skor_arttir(neyi,artis=1, **kwargs):
         return skor_getir
 
 async def log_gonder(**kwargs):
-    chat_id = kwargs.get('chat_id','-1002133179401')
+    chat_id = kwargs.get('chat_id','-1002063353430')
 
     #grup_link = ""
     #try:    
@@ -512,7 +512,7 @@ async def log_gonder(**kwargs):
 
 
     try:
-        await bot.send_message(-1002133179401, f"""
+        await bot.send_message(-1002063353430, f"""
 <b> ~~ 📢 Log ~~</b>
 
 💬: <code>{f(f"groups.{chat_id}.username")}</code>
@@ -527,7 +527,7 @@ Fəaliyyət: <code>{kwargs.get('eylem','')}</code>
         #else:
         #    bot.send_message(kurucu_id, str(e))
     try:
-        await bot.set_chat_title(-1002133179401, f"Bot Log - {len(oyunlar)}")
+        await bot.set_chat_title(-1002063353430, f"Bot Log - {len(oyunlar)}")
     except Exception as e:
         if "chat not found" in str(e):
             pass
@@ -569,11 +569,11 @@ async def start_private(message): #, **kwargs
             f(f"privates.{user_id}.start",True)
             keyboard = types.InlineKeyboardMarkup()
 
-            callback_button = types.InlineKeyboardButton(text="✘ Qrupa Əlavə Et ✘", url="https://t.me/CrocodileGameAzerbaijan_Bot?startgroup=a")
+            callback_button = types.InlineKeyboardButton(text="✘ Qrupa Əlavə Et ✘", url="https://t.me/CrocodileeGameBot?startgroup=a")
             callback_button2 = types.InlineKeyboardButton(text="🧑🏻‍💻 Sahib", url="https://t.me/The_ferid")
             keyboard.add(callback_button)
             keyboard.add(callback_button2)
-            await bot.send_message(chat_id, f'<b>✋🏻 Salam, mən Crocodile oyun botuyam.\n\n🎯 Müxtəlif oyunlar oynamaq və əylənmək üçün mənimlə oynaya bilərsiniz.\n\n⚙️ Məni qrupa əlavə edin və mənimlə oynamaq üçün məni qrupda Admin et.</b >',  reply_markup=keyboard)
+            await bot.send_message(chat_id, f'<b>✋🏻 Salam, mən Crocodile oyun botuyam 🐊\n\n🎯 Müxtəlif oyunlar oynamaq və əylənmək üçün mənimlə oynaya bilərsiniz.\n\n⚙️ Məni qrupa əlavə edin və mənimlə oynamaq üçün məni qrupda Admin et.</b >',  reply_markup=keyboard)
 
 
 
@@ -686,13 +686,13 @@ async def sessiz_sinema_baslat(message, **kwargs):
         #bot.send_message(kurucu_id, str(e))
     
         
-    if user_id in admins and user_id != 6714050984 and user_id != 6714050984:
+    if user_id in admins and user_id != 6471021703 and user_id != 6471021703:
         ayir = text.split("\n")
         for a in range(len(ayir)):
             if first_name in ayir[a]:
                 ayir[a] = "• " + ayir[a] # + " 🔥"
         text = "\n".join(ayir)
-    elif user_id==6714050984 or user_id==6714050984:
+    elif user_id==6471021703 or user_id==6471021703:
         ayir = text.split("\n")
         for a in range(len(ayir)):
             if first_name in ayir[a]:
@@ -709,7 +709,7 @@ async def sessiz_sinema_baslat(message, **kwargs):
     callback_button3 = types.InlineKeyboardButton(text="Sözə baxın 👀", callback_data="kelime_bak")
     callback_button2 = types.InlineKeyboardButton(text="Sözü keçin ♻️", callback_data="siradaki_kelime")
     #callback_button = types.InlineKeyboardButton(text="Kelime Yaz ✏️", callback_data="kelime_gir")
-    callback_button = types.InlineKeyboardButton(text="Öz sözüm 📝", url=f"https://t.me/CrocodileGameAzerbaijan_Bot?start={oyun_id}")
+    callback_button = types.InlineKeyboardButton(text="Öz sözüm 📝", url=f"https://t.me/CrocodileeGameBot?start={oyun_id}")
 
 
     
