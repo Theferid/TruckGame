@@ -2508,7 +2508,7 @@ async def rehber(message):
 
 📚 Qrupdaxili həftəlik ballar və qlobal həftəlik ballarla yarışlar təşkil edə bilərsiniz.
 
-👨🏻‍💻 Təklif və suallar üçün: @Rahid_7
+👨🏻‍💻 Təklif və suallar üçün: @The_ferid
 """)
 
 
